@@ -1,8 +1,9 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Information Visualisation
-author: Peter Adema
+title: The Pay Gap Visualisation
+author: KI - INFO - Group 38
+# logo: images/Stack_Overflow_logo.svg
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
