@@ -1,3 +1,10 @@
-# Information Visualistion
+# Information Visualisation: the Gender Pay Gap
 
-Code copied from Yen-Chia Hsu for building a Jupyter Book
+Jupyter Book visualising the gender pay gap for software developers,
+using the Stack Overflow Developers Survey data.
+
+Team members:
+- Peter Adema
+- Aize van Basten Batenburg
+- Wim Berkelmans
+- Kim Koomen
