@@ -6,6 +6,7 @@
 !/_config.yml
 !_toc.yml
 !/docs/
+!/data/
 *.DS_Store
 **/.ipynb_checkpoints
 **/__pycache__
