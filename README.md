@@ -1,4 +1,4 @@
-![gender pay gap banner](./banner.png)
+![gender pay gap banner](./banner.png?)
 
 # Information Visualisation: the Gender Pay Gap
 
