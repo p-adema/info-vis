@@ -71,7 +71,8 @@ done by simply checking the unique values for each column and combine values
 with the same meaning.
 
 After both Peter and Kim had successfully cleaned and normalised all columns,
-both datasets from 2014-2016 and 2017-2022 have been merged together.
+both datasets from 2014-2016 and 2017-2022 have been merged together into a
+single 2014-2022 dataset.
 
 We have decided to use parquet `.pq` as the file type. This allows us to specify
 the datatype for each column and decrease the overall file size of the final
