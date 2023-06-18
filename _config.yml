@@ -2,7 +2,8 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: The Pay Gap Visualisation
-author: KI - INFO - Group 38
+author: InfoVis Group 38
+copyright: "2023"
 # logo: images/Stack_Overflow_logo.svg
 
 # Force re-execution of notebooks on each build.
@@ -18,7 +19,6 @@ latex:
 # Information about where the book exists on the web
 repository:
   url: https://github.com/p-adema/info-vis
-  path_to_book: docs  # Optional path to your book, relative to the repository root
   branch: main  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
