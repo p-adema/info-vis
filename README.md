@@ -1,3 +1,5 @@
+![gender pay gap banner](./banner.png?)
+
 # Information Visualisation: the Gender Pay Gap
 
 Jupyter Book visualising the gender pay gap for software developers,
