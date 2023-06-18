@@ -4,4 +4,4 @@
 format: jb-book
 root: docs/home
 chapters:
-- file: notebook/story
+- file: notebooks/story
