@@ -46,8 +46,10 @@ cell inside `example_plot.ipynb` will be rendered.
 
 # Deploy
 
-In order to deploy to GitHub pages, you can run the following command: `ghp-import -n -p -f _build/html`.
-This will trigger a [GitHub Action](https://github.com/p-adema/info-vis/actions/workflows/pages/pages-build-deployment) that will deploy the project.
+In order to deploy to GitHub pages, you can run the following command in a
+terminal: `./scripts/deploy.sh` This will build the `./notebooks/story.ipynb` and trigger a
+[GitHub Action](https://github.com/p-adema/info-vis/actions/workflows/pages/pages-build-deployment)
+that will deploy the project.
 
 # Datasets
 
@@ -57,7 +59,7 @@ This project uses the 2014-2022 datasets listed at
 ## Cleaning process
 
 The dataset cleaning task has been divided between Peter and Kim. Initially,
-we weren't sure which years to include yet. Therefore, Kim did 2011-2016 and
+we weren't.t sure which years to include yet. Therefore, Kim did 2011-2016 and
 Peter did 2017-2022. After some brainstorming, we have decided to choose Gender
 Pay Gap as our topic. This resulted in the datasets from 2011, 2012 and 2013
 being useless, because they did not contain the gender of each participant.
