@@ -1,5 +1,7 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
 
-format: jb-article
-root: notebooks/story.ipynb
+format: jb-book
+root: docs/home.md
+chapters:
+  - file: notebooks/story.ipynb

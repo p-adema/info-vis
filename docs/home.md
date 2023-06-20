@@ -11,6 +11,8 @@ Data from these surveys are available and can be used to analyse the working con
 
 In particular, we will explore the correlation between yearly salary and features like age, country and job type.
 
+[Main Article](../notebooks/story.ipynb)
+
 **Authors**
 - Peter Adema
 - Aize van Basten Batenburg
