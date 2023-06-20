@@ -51,6 +51,8 @@ terminal: `./scripts/deploy.sh` This will build the `./notebooks/story.ipynb` an
 [GitHub Action](https://github.com/p-adema/info-vis/actions/workflows/pages/pages-build-deployment)
 that will deploy the project.
 
+Or: manually run the cleaning script [remove_code_input_cells.py](scripts%2Fremove_code_input_cells.py) and then deploy with the gh-pages command
+
 # Datasets
 
 This project uses the 2014-2022 datasets listed at
