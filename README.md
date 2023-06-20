@@ -47,11 +47,8 @@ cell inside `example_plot.ipynb` will be rendered.
 # Deploy
 
 In order to deploy to GitHub pages, you can run the following command in a
-terminal: `./scripts/deploy.sh` This will build the `./notebooks/story.ipynb` and trigger a
-[GitHub Action](https://github.com/p-adema/info-vis/actions/workflows/pages/pages-build-deployment)
-that will deploy the project.
-
-Or: manually run the cleaning script [remove_code_input_cells.py](scripts%2Fremove_code_input_cells.py) and then deploy with the gh-pages command
+terminal: `./scripts/deploy.sh`. This will build the project, notebooks and adds
+metadata to the `story.ipynb` in order to hide the input cells.
 
 # Datasets
 

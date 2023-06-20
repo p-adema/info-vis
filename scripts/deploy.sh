@@ -2,8 +2,10 @@
 
 ROOT_DIR=$(cd "$(dirname "$0")/.."; pwd -P)
 
-python3 $ROOT_DIR/scripts/remove_code_input_cells.py
+cd $ROOT_DIR
 
-rm -rf $ROOT_DIR/_build/
-jupyter-book build $ROOT_DIR/notebooks/story.ipynb
-ghp-import -n -p -f $ROOT_DIR/_build/_page/notebooks-story/html
+rm -rf _build/
+
+python3 scripts/remove_code_input_cells.py
+jupyter-book build .
+ghp-import -n -p -f _build/html

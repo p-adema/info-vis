@@ -27,3 +27,5 @@ if __name__ == '__main__':
         cell['metadata']['tags'] = cell_tags
 
     nbf.write(ntbk, DATASTORY_NB_FILEPATH)
+
+print('NOTE: Some files might have been changed, run "git status" to see which files have changed.')
