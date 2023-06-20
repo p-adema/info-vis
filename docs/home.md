@@ -1,4 +1,4 @@
-## Gender Pay Gap
+# Introduction
 
 For more than two centuries women have been fighting for equal rights and equal treatment. It has become more and more a political issue.
 In many Western societies equal rights for men and women are laid down in law.
@@ -11,7 +11,7 @@ Data from these surveys are available and can be used to analyse the working con
 
 In particular, we will explore the correlation between yearly salary and features like age, country and job type.
 
-[Main Article](../notebooks/story.ipynb)
+Click [here](../notebooks/story.ipynb) to go read the data story.
 
 **Authors**
 - Peter Adema
