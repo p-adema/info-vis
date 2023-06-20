@@ -23,15 +23,15 @@ repository:
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
-html:
-  use_issues_button: true
-  use_repository_button: true
+#html:
+#  use_issues_button: true
+#  use_repository_button: true
 
 # Add launch buttons
-launch_buttons:
-  binderhub_url: ""
-  colab_url: "https://colab.research.google.com"
-  jupyterhub_url: ""
+#launch_buttons:
+#  binderhub_url: ""
+#  colab_url: "https://colab.research.google.com"
+#  jupyterhub_url: ""
 
 sphinx:
   extra_extensions:
