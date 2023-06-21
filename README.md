@@ -1,8 +1,6 @@
 ![gender pay gap banner](./banner.png?)
 
-<center>
-<a href="https://p-adema.github.io/info-vis/" target="_blank">Click here to view the data story</a>
-</center>
+[Click here to view the data story](https://p-adema.github.io/info-vis/)
 
 # Information Visualisation: the Gender Pay Gap
 
