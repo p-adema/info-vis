@@ -320,10 +320,6 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">plotly.offline</span> <span class="k">as</span> <span class="nn">po</span>
-<span class="kn">import</span> <span class="nn">plotly.io</span> <span class="k">as</span> <span class="nn">pio</span>
-<span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">import</span> <span class="nn">re</span>
 </pre></div>
 </div>
 </div>
@@ -331,171 +327,11 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s1">&#39;../data/SO_2014_2022.pq&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Salary</th>
-      <th>JobSat</th>
-      <th>YearsCode</th>
-      <th>YearsCodePro</th>
-      <th>Age</th>
-      <th>Education</th>
-      <th>OrgSize</th>
-      <th>LastNewJob</th>
-      <th>Employment</th>
-      <th>RespondentType</th>
-      <th>JobSeek</th>
-      <th>Gender</th>
-      <th>Student</th>
-      <th>Country</th>
-      <th>CodingActivities</th>
-      <th>DevType</th>
-      <th>LearnCodeFrom</th>
-      <th>LangPresent</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2022</td>
-      <td>69318.0</td>
-      <td>&lt;NA&gt;</td>
-      <td>10</td>
-      <td>5</td>
-      <td>25-34</td>
-      <td>master</td>
-      <td>500 to 999 employees</td>
-      <td>&lt;NA&gt;</td>
-      <td>fulltime</td>
-      <td>dev</td>
-      <td>&lt;NA&gt;</td>
-      <td>male</td>
-      <td>no</td>
-      <td>Germany</td>
-      <td>School or academic work</td>
-      <td>Data scientist or machine learning specialist;...</td>
-      <td>Books / Physical media;School (i.e., Universit...</td>
-      <td>C;C++;Java;JavaScript;MATLAB;Python;Scala;SQL;...</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2022</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>9</td>
-      <td>&lt;NA&gt;</td>
-      <td>18-24</td>
-      <td>master</td>
-      <td>NaN</td>
-      <td>&lt;NA&gt;</td>
-      <td>fulltime</td>
-      <td>dev</td>
-      <td>&lt;NA&gt;</td>
-      <td>male</td>
-      <td>no</td>
-      <td>Sweden</td>
-      <td>Hobby;Contribute to open-source projects;Schoo...</td>
-      <td>Engineer, data;Developer, full-stack;Developer...</td>
-      <td>School (i.e., University, College, etc)</td>
-      <td>C++;Java;JavaScript;Python;R;SQL</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2022</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>25</td>
-      <td>20</td>
-      <td>45-54</td>
-      <td>tertiary</td>
-      <td>NaN</td>
-      <td>&lt;NA&gt;</td>
-      <td>independent</td>
-      <td>dev</td>
-      <td>&lt;NA&gt;</td>
-      <td>male</td>
-      <td>no</td>
-      <td>Indonesia</td>
-      <td>Hobby;Contribute to open-source projects</td>
-      <td>Developer, front-end;Developer, full-stack;Dev...</td>
-      <td>Books / Physical media;Other online resources ...</td>
-      <td>Bash/Shell/PowerShell;Dart;HTML/CSS;JavaScript...</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2022</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>6</td>
-      <td>&lt;NA&gt;</td>
-      <td>18-24</td>
-      <td>bachelor</td>
-      <td>NaN</td>
-      <td>&lt;NA&gt;</td>
-      <td>notwork</td>
-      <td>dev</td>
-      <td>&lt;NA&gt;</td>
-      <td>male</td>
-      <td>no</td>
-      <td>Russia</td>
-      <td>Hobby;School or academic work</td>
-      <td>Student;Developer, mobile</td>
-      <td>Books / Physical media;Friend or family member...</td>
-      <td>Bash/Shell/PowerShell;C;C++;Go;Groovy;Haskell;...</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2022</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>4</td>
-      <td>&lt;NA&gt;</td>
-      <td>25-34</td>
-      <td>master</td>
-      <td>NaN</td>
-      <td>&lt;NA&gt;</td>
-      <td>fulltime</td>
-      <td>dev</td>
-      <td>&lt;NA&gt;</td>
-      <td>female</td>
-      <td>no</td>
-      <td>Iran</td>
-      <td>Contribute to open-source projects</td>
-      <td>Data scientist or machine learning specialist;...</td>
-      <td>Books / Physical media</td>
-      <td>C++</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">avg_work_experience_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Gender&#39;</span><span class="p">)[</span><span class="s1">&#39;YearsCodePro&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">avg_work_experience</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Gender&#39;</span><span class="p">)[</span><span class="s1">&#39;YearsCodePro&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
-    <span class="n">avg_work_experience_df</span><span class="p">,</span>
+    <span class="n">avg_work_experience</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Gender&#39;</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;YearsCodePro&#39;</span><span class="p">,</span>
     <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Gender&#39;</span><span class="p">,</span>
@@ -524,8 +360,6 @@ document.write(`
                    <span class="n">font</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">},</span>
                    <span class="n">showarrow</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     
-
-
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -551,9 +385,9 @@ document.write(`
         });
         }
         </script>
-        </div><div class="output text_html"><div>                            <div id="1cbcf2a5-3a33-4d0c-b084-652606037d6f" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("1cbcf2a5-3a33-4d0c-b084-652606037d6f")) {                    Plotly.newPlot(                        "1cbcf2a5-3a33-4d0c-b084-652606037d6f",                        [{"alignmentgroup":"True","hovertemplate":"Gender=%{x}\u003cbr\u003eAverage years of work experience=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"female","marker":{"color":"#f25fe9","pattern":{"shape":""}},"name":"female","offsetgroup":"female","orientation":"v","showlegend":false,"textposition":"auto","x":["female"],"xaxis":"x","y":[5.865322513869338],"yaxis":"y","type":"bar","hoverlabel":{"font":{"color":"white"}}},{"alignmentgroup":"True","hovertemplate":"Gender=%{x}\u003cbr\u003eAverage years of work experience=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"male","marker":{"color":"#645cff","pattern":{"shape":""}},"name":"male","offsetgroup":"male","orientation":"v","showlegend":false,"textposition":"auto","x":["male"],"xaxis":"x","y":[8.209993330369054],"yaxis":"y","type":"bar","hoverlabel":{"font":{"color":"white"}}}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#343a42","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#343a42","#4edcda","#645cff","#f25fe9","#f74e4e","#73ef5a","#f7b24e"],"font":{"color":"#343a42"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"#E5ECF6","showlakes":true,"showland":true,"subunitcolor":"white"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"#fdead4","plot_bgcolor":"rgba(0,0,0,0)","polar":{"angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"title":{"x":0.5},"xaxis":{"automargin":true,"gridcolor":"#d8bea1","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"#d8bea1","zerolinewidth":1},"yaxis":{"automargin":true,"gridcolor":"#d8bea1","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"#d8bea1","zerolinewidth":1}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Gender"},"categoryorder":"array","categoryarray":["female","male"]},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Average years of work experience"}},"legend":{"title":{"text":"Gender"},"tracegroupgap":0},"title":{"text":"Average years of work experience per gender"},"barmode":"relative","annotations":[{"font":{"color":"grey","size":10},"showarrow":false,"text":"male survey respondents have more professional experience","x":0.5,"xanchor":"center","xshift":0,"y":0,"yshift":375}]},                        {"responsive": true}                    ).then(function(){
+        </div><div class="output text_html"><div>                            <div id="9ff45c1d-d6de-4b5c-971f-7039d8cb6664" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("9ff45c1d-d6de-4b5c-971f-7039d8cb6664")) {                    Plotly.newPlot(                        "9ff45c1d-d6de-4b5c-971f-7039d8cb6664",                        [{"alignmentgroup":"True","hovertemplate":"Gender=%{x}\u003cbr\u003eAverage years of work experience=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"female","marker":{"color":"#f25fe9","pattern":{"shape":""}},"name":"female","offsetgroup":"female","orientation":"v","showlegend":false,"textposition":"auto","x":["female"],"xaxis":"x","y":[5.865322513869338],"yaxis":"y","type":"bar","hoverlabel":{"font":{"color":"white"}}},{"alignmentgroup":"True","hovertemplate":"Gender=%{x}\u003cbr\u003eAverage years of work experience=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"male","marker":{"color":"#645cff","pattern":{"shape":""}},"name":"male","offsetgroup":"male","orientation":"v","showlegend":false,"textposition":"auto","x":["male"],"xaxis":"x","y":[8.209993330369054],"yaxis":"y","type":"bar","hoverlabel":{"font":{"color":"white"}}}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#343a42","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#343a42","#4edcda","#645cff","#f25fe9","#f74e4e","#73ef5a","#f7b24e"],"font":{"color":"#343a42"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"#E5ECF6","showlakes":true,"showland":true,"subunitcolor":"white"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"#fdead4","plot_bgcolor":"rgba(0,0,0,0)","polar":{"angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"title":{"x":0.5},"xaxis":{"automargin":true,"gridcolor":"#d8bea1","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"#d8bea1","zerolinewidth":1},"yaxis":{"automargin":true,"gridcolor":"#d8bea1","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"#d8bea1","zerolinewidth":1}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Gender"},"categoryorder":"array","categoryarray":["female","male"]},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Average years of work experience"}},"legend":{"title":{"text":"Gender"},"tracegroupgap":0},"title":{"text":"Average years of work experience per gender"},"barmode":"relative","annotations":[{"font":{"color":"grey","size":10},"showarrow":false,"text":"male survey respondents have more professional experience","x":0.5,"xanchor":"center","xshift":0,"y":0,"yshift":375}]},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('1cbcf2a5-3a33-4d0c-b084-652606037d6f');
+var gd = document.getElementById('9ff45c1d-d6de-4b5c-971f-7039d8cb6664');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -576,21 +410,6 @@ if (outputEl) {{
 }}
 
                         })                };                });            </script>        </div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
-<span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="w"></span>
-<span class="p">.</span><span class="nc">gender-work-experience-plot</span><span class="w"> </span><span class="p">.</span><span class="nc">cartesianlayer</span><span class="w"> </span><span class="p">.</span><span class="nc">bars</span><span class="w"> </span><span class="nt">path</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="k">clip-path</span><span class="p">:</span><span class="w"> </span><span class="nb">inset</span><span class="p">(</span><span class="mi">0</span><span class="kt">%</span><span class="w"> </span><span class="mi">0</span><span class="kt">%</span><span class="w"> </span><span class="nv">-10</span><span class="err">%</span><span class="w"> </span><span class="mi">0</span><span class="kt">%</span><span class="w"> </span><span class="kc">round</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><style>
-.gender-work-experience-plot .cartesianlayer .bars path {  clip-path: inset(0% 0% -10% 0% round 10px); }
-</style>
-</div></div>
 </div>
 
     <script type="text/x-thebe-config">
