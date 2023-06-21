@@ -320,6 +320,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <p><img alt="gender pay gap banner" src="banner.png?" /></p>
+<p><a class="reference external" href="https://p-adema.github.io/info-vis/">Click here to view the data story</a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="information-visualisation-the-gender-pay-gap">
 <h1>Information Visualisation: the Gender Pay Gap<a class="headerlink" href="#information-visualisation-the-gender-pay-gap" title="Permalink to this heading">#</a></h1>
 <p>Jupyter Book visualising the gender pay gap for software developers,
@@ -356,7 +357,7 @@ regarding the datasets source and the cleaning process, see the
 <li><p><a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/windows.html">Windows installation instructions</a></p></li>
 <li><p><a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html">Linux installation instructions</a></p></li>
 </ul>
-<p>In case you don’t have <code class="docutils literal notranslate"><span class="pre">juptyer</span></code> installed locally, simply run <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">jupyter</span></code>.</p>
+<p>In case you don’t have <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> installed locally, simply run <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">jupyter</span></code>.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="usage">
 <h1>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h1>
@@ -381,19 +382,19 @@ metadata to the <code class="docutils literal notranslate"><span class="pre">sto
 <section id="cleaning-process">
 <h2>Cleaning process<a class="headerlink" href="#cleaning-process" title="Permalink to this heading">#</a></h2>
 <p>The dataset cleaning task has been divided between Peter and Kim. Initially,
-we weren’t.t sure which years to include yet. Therefore, Kim did 2011-2016 and
+we weren’t sure which years to include yet. Therefore, Kim did 2011-2016 and
 Peter did 2017-2022. After some brainstorming, we have decided to choose Gender
 Pay Gap as our topic. This resulted in the datasets from 2011, 2012 and 2013
 being useless, because they did not contain the gender of each participant.</p>
-<p>Every year contained column changes, including column renaming, structural
-changes or new columns that have been added. Peter and Kim both have manually
-merged these columns by inspecting them one by one and merge the ones that
-overlap. Columns that were not of use were immediately excluded during this
-process.</p>
+<p>Each Stack Overflow dataset contained at least some changes, such as
+including column renaming, structural changes or new columns that have been
+added. Peter and Kim both have manually merged columns by inspecting them
+one by one and merge the ones that overlap in the datasets they were responsible
+for. Columns that were not of use were immediately excluded during this process.</p>
 <p>After merging columns, data had to be normalised for all years. This has been
 done by simply checking the unique values for each column and combine values
 with the same meaning.</p>
-<p>After both Peter and Kim had successfully cleaned and normalised all columns,
+<p>After both Peter and Kim had successfully cleaned and normalised their datasets,
 both datasets from 2014-2016 and 2017-2022 have been merged together into a
 single 2014-2022 dataset.</p>
 <p>We have decided to use parquet <code class="docutils literal notranslate"><span class="pre">.pq</span></code> as the file type. This allows us to specify
