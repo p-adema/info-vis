@@ -31,7 +31,7 @@ Additionally, install `conda` to setup a local environment.
 - [Windows installation instructions](https://docs.conda.io/projects/conda/en/latest/user-guide/install/windows.html)
 - [Linux installation instructions](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html)
 
-In case you don't have `juptyer` installed locally, simply run `pip3 install jupyter`.
+In case you don't have `jupyter` installed locally, simply run `pip3 install jupyter`.
 
 # Usage
 
