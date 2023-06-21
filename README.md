@@ -1,5 +1,9 @@
 ![gender pay gap banner](./banner.png?)
 
+<center>
+<a href="https://p-adema.github.io/info-vis/" target="_blank">Click here to view the data story</a>
+</center>
+
 # Information Visualisation: the Gender Pay Gap
 
 Jupyter Book visualising the gender pay gap for software developers,
