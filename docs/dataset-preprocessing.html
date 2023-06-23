@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; Gender Pay Gap</title>
+    <title>Dataset and preprocessing &#8212; Gender Pay Gap</title>
   
   
   
@@ -62,9 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/men_women_box';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/dataset-preprocessing';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The salary gap in software development" href="../notebooks/story.html" />
+    <link rel="prev" title="Introduction" href="home.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -130,7 +132,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="../docs/home.html">
+<a class="navbar-brand logo" href="home.html">
   
   
   
@@ -144,14 +146,14 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../docs/home.html">
+                <a class="reference internal" href="home.html">
                     Introduction
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../docs/dataset-preprocessing.html">Dataset and preprocessing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="story.html">The salary gap in software development</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Dataset and preprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/story.html">The salary gap in software development</a></li>
 </ul>
 
     </div>
@@ -206,7 +208,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/notebooks/men_women_box.ipynb" target="_blank"
+      <li><a href="../_sources/docs/dataset-preprocessing.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -216,7 +218,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -275,9 +277,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -288,19 +288,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Dataset and preprocessing</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -310,13 +302,31 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># display two boxes, one for the salaries of men and one for women</span>
-</pre></div>
-</div>
-</div>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="dataset-and-preprocessing">
+<h1>Dataset and preprocessing<a class="headerlink" href="#dataset-and-preprocessing" title="Permalink to this heading">#</a></h1>
+<p>This project uses the 2014-2022 datasets listed at
+<a class="reference external" href="https://insights.stackoverflow.com/survey">Stack Overflow Annual Developer Survey</a>.</p>
+<p>The dataset cleaning task has been divided between Peter and Kim. Initially,
+we weren’t sure which years to include yet. Therefore, Kim did 2011-2016 and
+Peter did 2017-2022. After some brainstorming, we have decided to choose Gender
+Pay Gap as our topic. This resulted in the datasets from 2011, 2012 and 2013
+being useless, because they did not contain the gender of each participant.</p>
+<p>Each Stack Overflow dataset contained at least some changes, such as
+including column renaming, structural changes or new columns that have been
+added. Peter and Kim both have manually merged columns by inspecting them
+one by one and merge the ones that overlap in the datasets they were responsible
+for. Columns that were not of use were immediately excluded during this process.</p>
+<p>After merging columns, data had to be normalised for all years. This has been
+done by simply checking the unique values for each column and combine values
+with the same meaning.</p>
+<p>After both Peter and Kim had successfully cleaned and normalised their datasets,
+both datasets from 2014-2016 and 2017-2022 have been merged together into a
+single 2014-2022 dataset.</p>
+<p>We have decided to use parquet <code class="docutils literal notranslate"><span class="pre">.pq</span></code> as the file type. This allows us to specify
+the datatype for each column and decrease the overall file size of the final
+dataset. Additional gzip compression has been applied. This resulted in a 7.2MB
+parquet file, rather than a 145MB csv file.</p>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -331,7 +341,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./notebooks"
+            path: "./docs"
         },
         predefinedOutput: true
     }
@@ -349,6 +359,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="home.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../notebooks/story.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The salary gap in software development</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -358,20 +386,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>

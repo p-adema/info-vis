@@ -150,6 +150,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="docs/dataset-preprocessing.html">Dataset and preprocessing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/story.html">The salary gap in software development</a></li>
 </ul>
 
@@ -302,10 +303,6 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting started</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#deploy">Deploy</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets">Datasets</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-process">Cleaning process</a></li>
-</ul>
-</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#authors">Authors</a></li>
 </ul>
 
@@ -336,11 +333,6 @@ regarding the datasets source and the cleaning process, see the
 <li><p><span class="xref myst">Getting started</span></p></li>
 <li><p><span class="xref myst">Usage</span></p></li>
 <li><p><span class="xref myst">Deploy</span></p></li>
-<li><p><span class="xref myst">Datasets</span></p>
-<ul>
-<li><p><span class="xref myst">Cleaning process</span></p></li>
-</ul>
-</li>
 <li><p><span class="xref myst">Authors</span></p></li>
 </ul>
 </section>
@@ -373,35 +365,8 @@ cell inside <code class="docutils literal notranslate"><span class="pre">example
 <h1>Deploy<a class="headerlink" href="#deploy" title="Permalink to this heading">#</a></h1>
 <p>In order to deploy to GitHub pages, you can run the following command in a
 terminal: <code class="docutils literal notranslate"><span class="pre">./scripts/deploy.sh</span></code>. This will build the project, notebooks and adds
-metadata to the <code class="docutils literal notranslate"><span class="pre">story.ipynb</span></code> in order to hide the input cells.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="datasets">
-<h1>Datasets<a class="headerlink" href="#datasets" title="Permalink to this heading">#</a></h1>
-<p>This project uses the 2014-2022 datasets listed at
-<a class="reference external" href="https://insights.stackoverflow.com/survey">Stack Overflow Annual Developer Survey</a>.</p>
-<section id="cleaning-process">
-<h2>Cleaning process<a class="headerlink" href="#cleaning-process" title="Permalink to this heading">#</a></h2>
-<p>The dataset cleaning task has been divided between Peter and Kim. Initially,
-we weren’t sure which years to include yet. Therefore, Kim did 2011-2016 and
-Peter did 2017-2022. After some brainstorming, we have decided to choose Gender
-Pay Gap as our topic. This resulted in the datasets from 2011, 2012 and 2013
-being useless, because they did not contain the gender of each participant.</p>
-<p>Each Stack Overflow dataset contained at least some changes, such as
-including column renaming, structural changes or new columns that have been
-added. Peter and Kim both have manually merged columns by inspecting them
-one by one and merge the ones that overlap in the datasets they were responsible
-for. Columns that were not of use were immediately excluded during this process.</p>
-<p>After merging columns, data had to be normalised for all years. This has been
-done by simply checking the unique values for each column and combine values
-with the same meaning.</p>
-<p>After both Peter and Kim had successfully cleaned and normalised their datasets,
-both datasets from 2014-2016 and 2017-2022 have been merged together into a
-single 2014-2022 dataset.</p>
-<p>We have decided to use parquet <code class="docutils literal notranslate"><span class="pre">.pq</span></code> as the file type. This allows us to specify
-the datatype for each column and decrease the overall file size of the final
-dataset. Additional gzip compression has been applied. This resulted in a 7.2MB
-parquet file, rather than a 145MB csv file.</p>
-</section>
+metadata to the <code class="docutils literal notranslate"><span class="pre">story.ipynb</span></code> in order to hide the input cells.
+Stack Overflow Annual Developer Survey](<a class="reference external" href="https://insights.stackoverflow.com/survey">https://insights.stackoverflow.com/survey</a>).</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="authors">
 <h1>Authors<a class="headerlink" href="#authors" title="Permalink to this heading">#</a></h1>
@@ -467,10 +432,6 @@ parquet file, rather than a 145MB csv file.</p>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting started</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#deploy">Deploy</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets">Datasets</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-process">Cleaning process</a></li>
-</ul>
-</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#authors">Authors</a></li>
 </ul>
 

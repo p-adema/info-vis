@@ -150,6 +150,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../docs/dataset-preprocessing.html">Dataset and preprocessing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="story.html">The salary gap in software development</a></li>
 </ul>
 
@@ -318,10 +319,15 @@ document.write(`
     <span class="n">bgcolor</span> <span class="o">=</span> <span class="s1">&#39;#ff0000&#39;</span>
     <span class="n">black</span> <span class="o">=</span> <span class="s1">&#39;#343a42&#39;</span>
     <span class="n">cyan</span> <span class="o">=</span> <span class="s1">&#39;#4edcda&#39;</span>
+    <span class="n">darkcyan</span> <span class="o">=</span> <span class="s1">&#39;#2b9694&#39;</span>
     <span class="n">blue</span> <span class="o">=</span> <span class="s1">&#39;#645cff&#39;</span>
+    <span class="n">darkblue</span> <span class="o">=</span> <span class="s1">&#39;#3a34b5&#39;</span>
     <span class="n">pink</span> <span class="o">=</span> <span class="s1">&#39;#f25fe9&#39;</span>
+    <span class="n">purple</span> <span class="o">=</span> <span class="s1">&#39;#a736a0&#39;</span>
     <span class="n">red</span> <span class="o">=</span> <span class="s1">&#39;#f74e4e&#39;</span>
-    <span class="n">green</span> <span class="o">=</span> <span class="s1">&#39;#73ef5a&#39;</span>
+    <span class="n">darkred</span> <span class="o">=</span> <span class="s1">&#39;#b33c3c&#39;</span>
+    <span class="n">green</span> <span class="o">=</span> <span class="s1">&#39;#2d8923&#39;</span>
+    <span class="n">darkgreen</span> <span class="o">=</span> <span class="s1">&#39;#2d8923&#39;</span>
     <span class="n">orange</span> <span class="o">=</span> <span class="s1">&#39;#f7b24e&#39;</span>
     <span class="n">darkorange</span> <span class="o">=</span> <span class="s1">&#39;#d8bea1&#39;</span>
 
@@ -351,7 +357,9 @@ document.write(`
                 <span class="s1">&#39;gridcolor&#39;</span><span class="p">:</span> <span class="n">darkorange</span><span class="p">,</span>
                 <span class="s1">&#39;zerolinewidth&#39;</span><span class="p">:</span> <span class="mi">1</span>
             <span class="p">},</span>    
-           <span class="s1">&#39;colorway&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">black</span><span class="p">,</span> <span class="n">cyan</span><span class="p">,</span> <span class="n">blue</span><span class="p">,</span> <span class="n">pink</span><span class="p">,</span> <span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">orange</span><span class="p">],</span>
+           <span class="s1">&#39;colorway&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">black</span><span class="p">,</span> 
+                        <span class="n">cyan</span><span class="p">,</span>     <span class="n">blue</span><span class="p">,</span>     <span class="n">pink</span><span class="p">,</span>   <span class="n">red</span><span class="p">,</span>     <span class="n">green</span><span class="p">,</span>     <span class="n">orange</span>
+                        <span class="n">darkcyan</span><span class="p">,</span> <span class="n">darkblue</span><span class="p">,</span> <span class="n">purple</span><span class="p">,</span> <span class="n">darkred</span><span class="p">,</span> <span class="n">darkgreen</span><span class="p">],</span>
             <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span>
             <span class="s1">&#39;annotationdefaults&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;arrowcolor&#39;</span><span class="p">:</span> <span class="n">black</span><span class="p">},</span>
 
@@ -359,6 +367,14 @@ document.write(`
     <span class="p">})</span>
 
     <span class="n">pio</span><span class="o">.</span><span class="n">templates</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s1">&#39;custom&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">47</span>
+    <span class="n">cyan</span><span class="p">,</span>     <span class="n">blue</span><span class="p">,</span>     <span class="n">pink</span><span class="p">,</span>   <span class="n">red</span><span class="p">,</span>     <span class="n">green</span><span class="p">,</span>     <span class="n">orange</span>
+                                                    <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax. Perhaps you forgot a comma?
 </pre></div>
 </div>
 </div>
