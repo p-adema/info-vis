@@ -8,8 +8,8 @@ columns will be renamed to those of 2017-2022.
 Usage: ./merge_datasets.py
 
 NOTE: This file assumes in the same directory two dataset files:
-(1)
-(2)
+(1) 2014_2016.csv: pre-cleaned and normalised dataset from 2014-2016.
+(2) SO_2_0.pq.gz: pre-cleaned and normalised dataset from 2017-2022.
 
 The output file will be both CSV (SO_2014_2022.csv) and parquet (SO_2014_2022.pq).
 The CSV is mainly used for debugging, because it is easy to open in third-pary software.
