@@ -25,5 +25,5 @@ single 2014-2022 dataset.
 
 We have decided to use parquet `.pq` as the file type. This allows us to specify
 the datatype for each column and decrease the overall file size of the final
-dataset. Additional gzip compression has been applied. This resulted in a 7.2MB
-parquet file, rather than a 145MB csv file.
+dataset with additional gzip compression. This resulted in a 7.2MB parquet file,
+rather than a 145MB csv file.
