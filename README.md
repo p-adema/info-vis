@@ -16,6 +16,7 @@ regarding the datasets source and the cleaning process, see the
 - [Getting started](#getting-started)
 - [Usage](#usage)
 - [Deploy](#deploy)
+- [Dataset cleaning scripts](#dataset-cleaning-scripts)
 - [Authors](#authors)
 
 # Getting started
@@ -49,6 +50,11 @@ cell inside `example_plot.ipynb` will be rendered.
 In order to deploy to GitHub pages, you can run the following command in a
 terminal: `./scripts/deploy.sh`. This will build the project, notebooks and adds
 metadata to the `story.ipynb` in order to hide the input cells.
+
+# Dataset cleaning scripts
+
+Click [here](./scripts/cleaning/) to have a look at the scripts that have been
+used to clean the datasets prior to the data story development phase.
 
 # Authors
 - Peter Adema
