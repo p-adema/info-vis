@@ -50,7 +50,7 @@ File [0;32m/opt/homebrew/lib/python3.10/site-packages/IPython/core/interactives
 
     [0;31m[... skipping hidden 1 frame][0m
 
-File [0;32m/var/folders/mn/tnbfxbt96x95kmz1qgzthgqc0000gn/T/ipykernel_31899/428036757.py:28[0m
+File [0;32m/var/folders/mn/tnbfxbt96x95kmz1qgzthgqc0000gn/T/ipykernel_32653/428036757.py:28[0m
 [1;32m     21[0m fig[38;5;241m.[39mupdate_traces(
 [1;32m     22[0m     width[38;5;241m=[39m[38;5;241m0.4[39m,
 [1;32m     23[0m     showlegend[38;5;241m=[39m[38;5;28;01mFalse[39;00m,
