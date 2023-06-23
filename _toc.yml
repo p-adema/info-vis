@@ -4,4 +4,5 @@
 format: jb-book
 root: docs/home.md
 chapters:
+  - file: docs/dataset-preprocessing.md
   - file: notebooks/story.ipynb
