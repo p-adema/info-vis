@@ -30,4 +30,4 @@ rather than a 145MB CSV file.
 
 After all, Peter and Kim together have manually inspected a total of 955 columns
 spanning 9 datasets and have reduced this to a total of 19 columns. The final
-dataset contains 535.759 rows.
+dataset contains 535,759 rows.
