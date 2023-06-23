@@ -306,7 +306,7 @@ document.write(`
 <h1>Dataset and preprocessing<a class="headerlink" href="#dataset-and-preprocessing" title="Permalink to this heading">#</a></h1>
 <p>This project uses the 2014-2022 datasets listed at
 <a class="reference external" href="https://insights.stackoverflow.com/survey">Stack Overflow Annual Developer Survey</a>.</p>
-<p>The dataset cleaning task has been divided between Peter and Kim. Initially,
+<p>The dataset cleaning task has been divided between Peter and Kim. At first,
 we weren’t sure which years to include yet. Therefore, Kim did 2011-2016 and
 Peter did 2017-2022. After some brainstorming, we have decided to choose Gender
 Pay Gap as our topic. This resulted in the datasets from 2011, 2012 and 2013
@@ -321,11 +321,14 @@ done by simply checking the unique values for each column and combine values
 with the same meaning.</p>
 <p>After both Peter and Kim had successfully cleaned and normalised their datasets,
 both datasets from 2014-2016 and 2017-2022 have been merged together into a
-single 2014-2022 dataset.</p>
+single 2014-2022 dataset. The final dataset contains</p>
 <p>We have decided to use parquet <code class="docutils literal notranslate"><span class="pre">.pq</span></code> as the file type. This allows us to specify
 the datatype for each column and decrease the overall file size of the final
 dataset with additional gzip compression. This resulted in a 7.2MB parquet file,
-rather than a 145MB csv file.</p>
+rather than a 145MB CSV file.</p>
+<p>After all, Peter and Kim together have manually inspected a total of 955 columns
+spanning 9 datasets and have reduced this to a total of 19 columns. The final
+dataset contains 535.759 rows.</p>
 </section>
 
     <script type="text/x-thebe-config">
