@@ -21,9 +21,13 @@ with the same meaning.
 
 After both Peter and Kim had successfully cleaned and normalised their datasets,
 both datasets from 2014-2016 and 2017-2022 have been merged together into a
-single 2014-2022 dataset.
+single 2014-2022 dataset. The final dataset contains
 
 We have decided to use parquet `.pq` as the file type. This allows us to specify
 the datatype for each column and decrease the overall file size of the final
 dataset with additional gzip compression. This resulted in a 7.2MB parquet file,
-rather than a 145MB csv file.
+rather than a 145MB CSV file.
+
+After all, Peter and Kim together have manually inspected a total of 955 columns
+spanning 9 datasets and have reduced this to a total of 19 columns. The final
+dataset contains 535.759 rows.
