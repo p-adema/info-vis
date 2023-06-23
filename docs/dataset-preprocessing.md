@@ -3,7 +3,7 @@
 This project uses the 2014-2022 datasets listed at
 [Stack Overflow Annual Developer Survey](https://insights.stackoverflow.com/survey).
 
-The dataset cleaning task has been divided between Peter and Kim. Initially,
+The dataset cleaning task has been divided between Peter and Kim. At first,
 we weren't sure which years to include yet. Therefore, Kim did 2011-2016 and
 Peter did 2017-2022. After some brainstorming, we have decided to choose Gender
 Pay Gap as our topic. This resulted in the datasets from 2011, 2012 and 2013
