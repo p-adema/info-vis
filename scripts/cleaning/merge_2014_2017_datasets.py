@@ -430,13 +430,42 @@ def main():
     for col in ['JobSat']:
         combined_df[col] = combined_df[col].astype(pd.Int8Dtype())
 
-    for col in ['Age', 'Education', 'OrgSize', 'LastNewJob', 'Employment', 'RespondentType', 'JobSeek', 'Gender', 'Student', 'Country', 'CodingActivities', 'DevType', 'LearnCodeFrom', 'LangPresent']:
+    string_dtype_cols = ['Age', 'Education', 'OrgSize', 'LastNewJob',
+                         'Employment', 'RespondentType', 'JobSeek', 'Gender',
+                         'Student', 'Country', 'CodingActivities', 'DevType',
+                         'LearnCodeFrom', 'LangPresent']
+    for col in string_dtype_cols:
         combined_df[col] = combined_df[col].astype(pd.StringDtype())
 
     combined_df['Year'] = pd.Categorical(combined_df['Year'], ordered=True)
-    combined_df['Age'] = pd.Categorical(combined_df['Age'], ordered=True, categories=['18-24', '25-34', '35-44', '45-54', '55-64', '65+'])
-    combined_df['Education'] = pd.Categorical(combined_df['Education'], ordered=True, categories=['none', 'primary', 'secondary', 'tertiary', 'assoc', 'bachelor', 'master', 'professional', 'doctor'])
-    combined_df['OrgSize'] = pd.Categorical(combined_df['OrgSize'], ordered=True, categories=['Just me - I am a freelancer, sole proprietor,...', '2 to 9 employees', '10 to 19 employees', '20 to 99 employees', '100 to 499 employees', '500 to 999 employees', '1,000 to 4,999 employees', '5,000 to 9,999 employees', '10,000 or more employees'])
+
+    combined_df['Age'] = pd.Categorical(combined_df['Age'],
+                                        ordered=True,
+                                        categories=['18-24', '25-34', '35-44', '45-54', '55-64', '65+'])
+
+    combined_df['Education'] = pd.Categorical(combined_df['Education'],
+                                              ordered=True,
+                                              categories=['none',
+                                                          'primary',
+                                                          'secondary',
+                                                          'tertiary',
+                                                          'assoc',
+                                                          'bachelor',
+                                                          'master',
+                                                          'professional',
+                                                          'doctor'])
+
+    combined_df['OrgSize'] = pd.Categorical(combined_df['OrgSize'],
+                                            ordered=True,
+                                            categories=['Just me - I am a freelancer, sole proprietor,...',
+                                                        '2 to 9 employees',
+                                                        '10 to 19 employees',
+                                                        '20 to 99 employees',
+                                                        '100 to 499 employees',
+                                                        '500 to 999 employees',
+                                                        '1,000 to 4,999 employees',
+                                                        '5,000 to 9,999 employees',
+                                                        '10,000 or more employees'])
 
     combined_df.to_parquet('SO_2014_2022.pq', compression='gzip')
     combined_df.to_csv('SO_2014_2022.csv')
