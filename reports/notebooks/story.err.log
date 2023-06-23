@@ -15,57 +15,57 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-%run salary_age.ipynb
+%run gender_work_experience.ipynb
 ------------------
 
-Traceback [0;36m(most recent call last)[0m:
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[3], line 1[0m
+[0;32m----> 1[0m [43mget_ipython[49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[43mrun_line_magic[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mrun[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mgender_work_experience.ipynb[39;49m[38;5;124;43m'[39;49m[43m)[49m
 
-[0m  File [1;32m/opt/homebrew/lib/python3.10/site-packages/IPython/core/interactiveshell.py:3433[0m in [1;35mrun_code[0m
-    exec(code_obj, self.user_global_ns, self.user_ns)[0m
+File [0;32m/opt/homebrew/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2364[0m, in [0;36mInteractiveShell.run_line_magic[0;34m(self, magic_name, line, _stack_depth)[0m
+[1;32m   2362[0m     kwargs[[38;5;124m'[39m[38;5;124mlocal_ns[39m[38;5;124m'[39m] [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mget_local_scope(stack_depth)
+[1;32m   2363[0m [38;5;28;01mwith[39;00m [38;5;28mself[39m[38;5;241m.[39mbuiltin_trap:
+[0;32m-> 2364[0m     result [38;5;241m=[39m [43mfn[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[1;32m   2365[0m [38;5;28;01mreturn[39;00m result
 
-[0m  Cell [1;32mIn[2], line 1[0m
-    get_ipython().run_line_magic('run', 'salary_age.ipynb')[0m
+File [0;32m/opt/homebrew/lib/python3.10/site-packages/IPython/core/magics/execution.py:717[0m, in [0;36mExecutionMagics.run[0;34m(self, parameter_s, runner, file_finder)[0m
+[1;32m    715[0m     [38;5;28;01mwith[39;00m preserve_keys([38;5;28mself[39m[38;5;241m.[39mshell[38;5;241m.[39muser_ns, [38;5;124m'[39m[38;5;124m__file__[39m[38;5;124m'[39m):
+[1;32m    716[0m         [38;5;28mself[39m[38;5;241m.[39mshell[38;5;241m.[39muser_ns[[38;5;124m'[39m[38;5;124m__file__[39m[38;5;124m'[39m] [38;5;241m=[39m filename
+[0;32m--> 717[0m         [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mshell[49m[38;5;241;43m.[39;49m[43msafe_execfile_ipy[49m[43m([49m[43mfilename[49m[43m,[49m[43m [49m[43mraise_exceptions[49m[38;5;241;43m=[39;49m[38;5;28;43;01mTrue[39;49;00m[43m)[49m
+[1;32m    718[0m     [38;5;28;01mreturn[39;00m
+[1;32m    720[0m [38;5;66;03m# Control the response to exit() calls made by the script being run[39;00m
 
-[0m  File [1;32m/opt/homebrew/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2364[0m in [1;35mrun_line_magic[0m
-    result = fn(*args, **kwargs)[0m
+File [0;32m/opt/homebrew/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2870[0m, in [0;36mInteractiveShell.safe_execfile_ipy[0;34m(self, fname, shell_futures, raise_exceptions)[0m
+[1;32m   2868[0m result [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mrun_cell(cell, silent[38;5;241m=[39m[38;5;28;01mTrue[39;00m, shell_futures[38;5;241m=[39mshell_futures)
+[1;32m   2869[0m [38;5;28;01mif[39;00m raise_exceptions:
+[0;32m-> 2870[0m     [43mresult[49m[38;5;241;43m.[39;49m[43mraise_error[49m[43m([49m[43m)[49m
+[1;32m   2871[0m [38;5;28;01melif[39;00m [38;5;129;01mnot[39;00m result[38;5;241m.[39msuccess:
+[1;32m   2872[0m     [38;5;28;01mbreak[39;00m
 
-[0m  File [1;32m/opt/homebrew/lib/python3.10/site-packages/IPython/core/magics/execution.py:717[0m in [1;35mrun[0m
-    self.shell.safe_execfile_ipy(filename, raise_exceptions=True)[0m
+File [0;32m/opt/homebrew/lib/python3.10/site-packages/IPython/core/interactiveshell.py:266[0m, in [0;36mExecutionResult.raise_error[0;34m(self)[0m
+[1;32m    264[0m     [38;5;28;01mraise[39;00m [38;5;28mself[39m[38;5;241m.[39merror_before_exec
+[1;32m    265[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39merror_in_exec [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[0;32m--> 266[0m     [38;5;28;01mraise[39;00m [38;5;28mself[39m[38;5;241m.[39merror_in_exec
 
-[0m  File [1;32m/opt/homebrew/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2870[0m in [1;35msafe_execfile_ipy[0m
-    result.raise_error()[0m
+    [0;31m[... skipping hidden 1 frame][0m
 
-[0m  File [1;32m/opt/homebrew/lib/python3.10/site-packages/IPython/core/interactiveshell.py:266[0m in [1;35mraise_error[0m
-    raise self.error_in_exec[0m
+File [0;32m/var/folders/mn/tnbfxbt96x95kmz1qgzthgqc0000gn/T/ipykernel_30593/428036757.py:28[0m
+[1;32m     21[0m fig[38;5;241m.[39mupdate_traces(
+[1;32m     22[0m     width[38;5;241m=[39m[38;5;241m0.4[39m,
+[1;32m     23[0m     showlegend[38;5;241m=[39m[38;5;28;01mFalse[39;00m,
+[1;32m     24[0m     hoverlabel[38;5;241m=[39m{[38;5;124m'[39m[38;5;124mfont_color[39m[38;5;124m'[39m: [38;5;124m'[39m[38;5;124mwhite[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mbordercolor[39m[38;5;124m'[39m: [38;5;124m'[39m[38;5;124mwhite[39m[38;5;124m'[39m}
+[1;32m     25[0m )
+[1;32m     27[0m [38;5;28;01mfor[39;00m trace [38;5;129;01min[39;00m fig[38;5;241m.[39mdata:
+[0;32m---> 28[0m     [43mseries[49m[38;5;241m.[39mhovertemplate [38;5;241m=[39m [38;5;124m'[39m[38;5;124m<b>[39m[38;5;124m'[39m [38;5;241m+[39m trace[38;5;241m.[39mname [38;5;241m+[39m [38;5;124m'[39m[38;5;124m</b><br>Salary increase: [39m[38;5;124m%[39m[38;5;132;01m{y}[39;00m[38;5;124m<extra></extra>[39m[38;5;124m'[39m
+[1;32m     30[0m [38;5;66;03m# fig.add_annotation(x=1, y=0,[39;00m
+[1;32m     31[0m [38;5;66;03m#                    xref="paper", yref="paper",[39;00m
+[1;32m     32[0m [38;5;66;03m#                    align='right',[39;00m
+[1;32m     33[0m [38;5;66;03m#                    showarrow=False,[39;00m
+[1;32m     34[0m [38;5;66;03m#                    xanchor='right', yanchor='bottom',[39;00m
+[1;32m     35[0m [38;5;66;03m#                    text='some fancy caption here')[39;00m
+[1;32m     37[0m fig[38;5;241m.[39mshow()
 
-[0m  File [1;32m/opt/homebrew/lib/python3.10/site-packages/IPython/core/interactiveshell.py:3433[0m in [1;35mrun_code[0m
-    exec(code_obj, self.user_global_ns, self.user_ns)[0m
-
-[0m  File [1;32m/var/folders/mn/tnbfxbt96x95kmz1qgzthgqc0000gn/T/ipykernel_98677/1409236331.py:1[0m
-    get_ipython().run_line_magic('run', 'set_theme.ipynb')[0m
-
-[0m  File [1;32m/opt/homebrew/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2364[0m in [1;35mrun_line_magic[0m
-    result = fn(*args, **kwargs)[0m
-
-[0m  File [1;32m/opt/homebrew/lib/python3.10/site-packages/IPython/core/magics/execution.py:717[0m in [1;35mrun[0m
-    self.shell.safe_execfile_ipy(filename, raise_exceptions=True)[0m
-
-[0m  File [1;32m/opt/homebrew/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2870[0m in [1;35msafe_execfile_ipy[0m
-    result.raise_error()[0m
-
-[0m  File [1;32m/opt/homebrew/lib/python3.10/site-packages/IPython/core/interactiveshell.py:264[0m in [1;35mraise_error[0m
-    raise self.error_before_exec[0m
-
-[0m  File [1;32m/opt/homebrew/lib/python3.10/site-packages/IPython/core/interactiveshell.py:3167[0m in [1;35mrun_cell_async[0m
-    code_ast = compiler.ast_parse(cell, filename=cell_name)[0m
-
-[0;36m  File [0;32m/opt/homebrew/lib/python3.10/site-packages/IPython/core/compilerop.py:86[0;36m in [0;35mast_parse[0;36m
-[0;31m    return compile(source, filename, symbol, self.flags | PyCF_ONLY_AST, 1)[0;36m
-
-[0;36m  File [0;32m/var/folders/mn/tnbfxbt96x95kmz1qgzthgqc0000gn/T/ipykernel_98677/2977157358.py:47[0;36m[0m
-[0;31m    cyan,     blue,     pink,   red,     green,     orange[0m
-[0m                                                    ^[0m
-[0;31mSyntaxError[0m[0;31m:[0m invalid syntax. Perhaps you forgot a comma?
-
-SyntaxError: invalid syntax. Perhaps you forgot a comma? (2977157358.py, line 47)
+[0;31mNameError[0m: name 'series' is not defined
+NameError: name 'series' is not defined
 

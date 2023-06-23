@@ -15,39 +15,63 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-%run set_theme.ipynb
+df = pd.read_parquet('../data/SO_2014_2022.pq')
+
+avg_work_experience = df.groupby('Gender')['YearsCodePro'].mean().reset_index()
+
+fig = px.bar(
+    avg_work_experience,
+    x='Gender',
+    y='YearsCodePro',
+    color='Gender',
+    labels={
+        'Gender': 'Gender',
+        'YearsCodePro': 'Average years of work experience'
+    },
+    color_discrete_map={
+        'male': '#645cff',
+        'female': '#f25fe9'
+    },
+    title='Average Work Experience By Gender<br><sup>male survey respondents generally have more professional work experience</sup>',
+)
+
+fig.update_traces(
+    width=0.4,
+    showlegend=False,
+    hoverlabel={'font_color': 'white', 'bordercolor': 'white'}
+)
+
+for trace in fig.data:
+    series.hovertemplate = '<b>' + trace.name + '</b><br>Salary increase: %{y}<extra></extra>'
+
+# fig.add_annotation(x=1, y=0,
+#                    xref="paper", yref="paper",
+#                    align='right',
+#                    showarrow=False,
+#                    xanchor='right', yanchor='bottom',
+#                    text='some fancy caption here')
+
+fig.show()
 ------------------
 
-Traceback [0;36m(most recent call last)[0m:
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[3], line 28[0m
+[1;32m     21[0m fig[38;5;241m.[39mupdate_traces(
+[1;32m     22[0m     width[38;5;241m=[39m[38;5;241m0.4[39m,
+[1;32m     23[0m     showlegend[38;5;241m=[39m[38;5;28;01mFalse[39;00m,
+[1;32m     24[0m     hoverlabel[38;5;241m=[39m{[38;5;124m'[39m[38;5;124mfont_color[39m[38;5;124m'[39m: [38;5;124m'[39m[38;5;124mwhite[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mbordercolor[39m[38;5;124m'[39m: [38;5;124m'[39m[38;5;124mwhite[39m[38;5;124m'[39m}
+[1;32m     25[0m )
+[1;32m     27[0m [38;5;28;01mfor[39;00m trace [38;5;129;01min[39;00m fig[38;5;241m.[39mdata:
+[0;32m---> 28[0m     [43mseries[49m[38;5;241m.[39mhovertemplate [38;5;241m=[39m [38;5;124m'[39m[38;5;124m<b>[39m[38;5;124m'[39m [38;5;241m+[39m trace[38;5;241m.[39mname [38;5;241m+[39m [38;5;124m'[39m[38;5;124m</b><br>Salary increase: [39m[38;5;124m%[39m[38;5;132;01m{y}[39;00m[38;5;124m<extra></extra>[39m[38;5;124m'[39m
+[1;32m     30[0m [38;5;66;03m# fig.add_annotation(x=1, y=0,[39;00m
+[1;32m     31[0m [38;5;66;03m#                    xref="paper", yref="paper",[39;00m
+[1;32m     32[0m [38;5;66;03m#                    align='right',[39;00m
+[1;32m     33[0m [38;5;66;03m#                    showarrow=False,[39;00m
+[1;32m     34[0m [38;5;66;03m#                    xanchor='right', yanchor='bottom',[39;00m
+[1;32m     35[0m [38;5;66;03m#                    text='some fancy caption here')[39;00m
+[1;32m     37[0m fig[38;5;241m.[39mshow()
 
-[0m  File [1;32m/opt/homebrew/lib/python3.10/site-packages/IPython/core/interactiveshell.py:3433[0m in [1;35mrun_code[0m
-    exec(code_obj, self.user_global_ns, self.user_ns)[0m
-
-[0m  Cell [1;32mIn[1], line 1[0m
-    get_ipython().run_line_magic('run', 'set_theme.ipynb')[0m
-
-[0m  File [1;32m/opt/homebrew/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2364[0m in [1;35mrun_line_magic[0m
-    result = fn(*args, **kwargs)[0m
-
-[0m  File [1;32m/opt/homebrew/lib/python3.10/site-packages/IPython/core/magics/execution.py:717[0m in [1;35mrun[0m
-    self.shell.safe_execfile_ipy(filename, raise_exceptions=True)[0m
-
-[0m  File [1;32m/opt/homebrew/lib/python3.10/site-packages/IPython/core/interactiveshell.py:2870[0m in [1;35msafe_execfile_ipy[0m
-    result.raise_error()[0m
-
-[0m  File [1;32m/opt/homebrew/lib/python3.10/site-packages/IPython/core/interactiveshell.py:264[0m in [1;35mraise_error[0m
-    raise self.error_before_exec[0m
-
-[0m  File [1;32m/opt/homebrew/lib/python3.10/site-packages/IPython/core/interactiveshell.py:3167[0m in [1;35mrun_cell_async[0m
-    code_ast = compiler.ast_parse(cell, filename=cell_name)[0m
-
-[0;36m  File [0;32m/opt/homebrew/lib/python3.10/site-packages/IPython/core/compilerop.py:86[0;36m in [0;35mast_parse[0;36m
-[0;31m    return compile(source, filename, symbol, self.flags | PyCF_ONLY_AST, 1)[0;36m
-
-[0;36m  File [0;32m/var/folders/mn/tnbfxbt96x95kmz1qgzthgqc0000gn/T/ipykernel_98629/2977157358.py:47[0;36m[0m
-[0;31m    cyan,     blue,     pink,   red,     green,     orange[0m
-[0m                                                    ^[0m
-[0;31mSyntaxError[0m[0;31m:[0m invalid syntax. Perhaps you forgot a comma?
-
-SyntaxError: invalid syntax. Perhaps you forgot a comma? (2977157358.py, line 47)
+[0;31mNameError[0m: name 'series' is not defined
+NameError: name 'series' is not defined
 
