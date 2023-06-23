@@ -1,0 +1,948 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>&lt;no title&gt; &#8212; Gender Pay Gap</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/salaries_gender_countries';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../docs/home.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Gender Pay Gap</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../docs/home.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../docs/dataset-preprocessing.html">Dataset and preprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="story.html">The salary gap in software development</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/salaries_gender_countries.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> set_theme.ipynb
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="kn">import</span> <span class="n">init_notebook_mode</span>
+<span class="n">init_notebook_mode</span><span class="p">(</span><span class="n">connected</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">        <script type="text/javascript">
+        window.PlotlyConfig = {MathJaxConfig: 'local'};
+        if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+        if (typeof require !== 'undefined') {
+        require.undef("plotly");
+        requirejs.config({
+            paths: {
+                'plotly': ['https://cdn.plot.ly/plotly-2.24.1.min']
+            }
+        });
+        require(['plotly'], function(Plotly) {
+            window._Plotly = Plotly;
+        });
+        }
+        </script>
+        </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s1">&#39;../data/SO_2014_2022.pq&#39;</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Salary&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Salary&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">250000</span><span class="p">)]</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Salary</th>
+      <th>JobSat</th>
+      <th>YearsCode</th>
+      <th>YearsCodePro</th>
+      <th>Age</th>
+      <th>Education</th>
+      <th>OrgSize</th>
+      <th>LastNewJob</th>
+      <th>Employment</th>
+      <th>RespondentType</th>
+      <th>JobSeek</th>
+      <th>Gender</th>
+      <th>Student</th>
+      <th>Country</th>
+      <th>CodingActivities</th>
+      <th>DevType</th>
+      <th>LearnCodeFrom</th>
+      <th>LangPresent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2022</td>
+      <td>69318.0</td>
+      <td>&lt;NA&gt;</td>
+      <td>10</td>
+      <td>5</td>
+      <td>25-34</td>
+      <td>master</td>
+      <td>500 to 999 employees</td>
+      <td>&lt;NA&gt;</td>
+      <td>fulltime</td>
+      <td>dev</td>
+      <td>&lt;NA&gt;</td>
+      <td>male</td>
+      <td>no</td>
+      <td>Germany</td>
+      <td>School or academic work</td>
+      <td>Data scientist or machine learning specialist;...</td>
+      <td>Books / Physical media;School (i.e., Universit...</td>
+      <td>C;C++;Java;JavaScript;MATLAB;Python;Scala;SQL;...</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2022</td>
+      <td>27652.0</td>
+      <td>&lt;NA&gt;</td>
+      <td>18</td>
+      <td>10</td>
+      <td>25-34</td>
+      <td>bachelor</td>
+      <td>1,000 to 4,999 employees</td>
+      <td>&lt;NA&gt;</td>
+      <td>fulltime</td>
+      <td>dev</td>
+      <td>&lt;NA&gt;</td>
+      <td>male</td>
+      <td>no</td>
+      <td>Colombia</td>
+      <td>Hobby</td>
+      <td>Developer, full-stack;Developer, back-end</td>
+      <td>Books / Physical media;Other online resources ...</td>
+      <td>Bash/Shell/PowerShell;Elixir;HTML/CSS;JavaScri...</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2022</td>
+      <td>15431.0</td>
+      <td>&lt;NA&gt;</td>
+      <td>5</td>
+      <td>5</td>
+      <td>25-34</td>
+      <td>bachelor</td>
+      <td>20 to 99 employees</td>
+      <td>&lt;NA&gt;</td>
+      <td>fulltime</td>
+      <td>dev</td>
+      <td>&lt;NA&gt;</td>
+      <td>male</td>
+      <td>no</td>
+      <td>Ghana</td>
+      <td>Freelance/contract work</td>
+      <td>Developer, back-end</td>
+      <td>On the job training;Coding Bootcamp</td>
+      <td>JavaScript;Ruby</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2022</td>
+      <td>47352.0</td>
+      <td>&lt;NA&gt;</td>
+      <td>7</td>
+      <td>7</td>
+      <td>45-54</td>
+      <td>master</td>
+      <td>10 to 19 employees</td>
+      <td>&lt;NA&gt;</td>
+      <td>fulltime</td>
+      <td>non-dev</td>
+      <td>&lt;NA&gt;</td>
+      <td>male</td>
+      <td>no</td>
+      <td>Belgium</td>
+      <td>Hobby</td>
+      <td>Developer, back-end;Educator or academic;Datab...</td>
+      <td>Books / Physical media;On the job training;Col...</td>
+      <td>Delphi;SQL</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>2022</td>
+      <td>78084.0</td>
+      <td>&lt;NA&gt;</td>
+      <td>25</td>
+      <td>25</td>
+      <td>45-54</td>
+      <td>bachelor</td>
+      <td>500 to 999 employees</td>
+      <td>&lt;NA&gt;</td>
+      <td>fulltime</td>
+      <td>non-dev</td>
+      <td>&lt;NA&gt;</td>
+      <td>male</td>
+      <td>no</td>
+      <td>Canada</td>
+      <td>Hobby;Contribute to open-source projects</td>
+      <td>Engineer, site reliability;Security professional</td>
+      <td>Books / Physical media;Other online resources ...</td>
+      <td>Bash/Shell/PowerShell;C;JavaScript;Perl;PHP;Py...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show the top-n countries in the plot.</span>
+<span class="n">TOP_N_COUNTRIES</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># Take the top-n countries that have the most developers.</span>
+<span class="n">countries</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;RespondentType&#39;</span><span class="p">]]</span> \
+    <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;RespondentType == &quot;dev&quot;&#39;</span><span class="p">)</span> \
+    <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Country != &quot;Brazil&quot;&#39;</span><span class="p">)</span> \
+    <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Country != &quot;India&quot;&#39;</span><span class="p">)</span> \
+    <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Country != &quot;Russia&quot;&#39;</span><span class="p">)</span> \
+    <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Country != &quot;Sweden&quot;&#39;</span><span class="p">)</span> \
+    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> \
+    <span class="o">.</span><span class="n">count</span><span class="p">()</span> \
+    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;RespondentType&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> \
+    <span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">TOP_N_COUNTRIES</span><span class="p">)</span> \
+    <span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> \
+    <span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="n">countries_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">countries</span><span class="p">)]</span>
+    
+<span class="c1"># Calculate the salary gap in percentage.</span>
+<span class="n">salary_men_df</span> <span class="o">=</span> <span class="n">countries_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Gender == &quot;male&quot;&#39;</span><span class="p">)</span> \
+    <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Country&#39;</span><span class="p">])</span> \
+    <span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span> <span class="p">})</span> \
+    <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span> \
+    <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="s1">&#39;SalaryMen&#39;</span><span class="p">})</span>
+
+<span class="n">salary_women_df</span> <span class="o">=</span> <span class="n">countries_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Gender == &quot;female&quot;&#39;</span><span class="p">)</span> \
+    <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Country&#39;</span><span class="p">])</span> \
+    <span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span> <span class="p">})</span> \
+    <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span> \
+    <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="s1">&#39;SalaryWomen&#39;</span><span class="p">})</span>
+
+<span class="n">salary_gap_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">salary_men_df</span><span class="p">,</span> <span class="n">salary_women_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Country&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">salary_gap_df</span><span class="p">[</span><span class="s1">&#39;SalaryGap&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">salary_gap_df</span><span class="p">[</span><span class="s1">&#39;SalaryMen&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">salary_gap_df</span><span class="p">[</span><span class="s1">&#39;SalaryWomen&#39;</span><span class="p">])</span>
+<span class="n">salary_gap_df</span><span class="p">[</span><span class="s1">&#39;SalaryGapPercent&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">salary_gap_df</span><span class="p">[</span><span class="s1">&#39;SalaryMen&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">salary_gap_df</span><span class="p">[</span><span class="s1">&#39;SalaryWomen&#39;</span><span class="p">])</span> <span class="o">/</span> <span class="n">salary_gap_df</span><span class="p">[</span><span class="s1">&#39;SalaryMen&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="n">salary_gap_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Country</th>
+      <th>SalaryMen</th>
+      <th>SalaryWomen</th>
+      <th>SalaryGap</th>
+      <th>SalaryGapPercent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2014</td>
+      <td>Australia</td>
+      <td>81355.140187</td>
+      <td>70000.0</td>
+      <td>11355.140187</td>
+      <td>13.957496</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2014</td>
+      <td>Canada</td>
+      <td>71124.260355</td>
+      <td>57692.307692</td>
+      <td>13431.952663</td>
+      <td>18.885191</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2014</td>
+      <td>France</td>
+      <td>54724.409449</td>
+      <td>47000.0</td>
+      <td>7724.409449</td>
+      <td>14.115108</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2014</td>
+      <td>Germany</td>
+      <td>61491.596639</td>
+      <td>50714.285714</td>
+      <td>10777.310924</td>
+      <td>17.526478</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2014</td>
+      <td>Italy</td>
+      <td>33923.076923</td>
+      <td>25000.0</td>
+      <td>8923.076923</td>
+      <td>26.303855</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate the mean salary gap for all countries for all genders.</span>
+<span class="n">mean_salary_men_df</span> <span class="o">=</span> <span class="n">countries_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Gender == &quot;male&quot;&#39;</span><span class="p">)</span> \
+    <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Country&#39;</span><span class="p">])</span> \
+    <span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span> <span class="p">})</span> \
+    <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span> \
+    <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="s1">&#39;SalaryMen&#39;</span><span class="p">})</span>
+
+<span class="n">mean_salary_women_df</span> <span class="o">=</span> <span class="n">countries_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Gender == &quot;female&quot;&#39;</span><span class="p">)</span> \
+    <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Country&#39;</span><span class="p">])</span> \
+    <span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span> <span class="p">})</span> \
+    <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span> \
+    <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Salary&#39;</span><span class="p">:</span> <span class="s1">&#39;SalaryWomen&#39;</span><span class="p">})</span>
+
+<span class="n">mean_salary_gap_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">mean_salary_men_df</span><span class="p">,</span> <span class="n">mean_salary_women_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Country&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">mean_salary_gap_df</span><span class="p">[</span><span class="s1">&#39;SalaryGap&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">mean_salary_gap_df</span><span class="p">[</span><span class="s1">&#39;SalaryMen&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">mean_salary_gap_df</span><span class="p">[</span><span class="s1">&#39;SalaryWomen&#39;</span><span class="p">])</span>
+<span class="n">mean_salary_gap_df</span><span class="p">[</span><span class="s1">&#39;SalaryGapPercent&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">mean_salary_gap_df</span><span class="p">[</span><span class="s1">&#39;SalaryMen&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">mean_salary_gap_df</span><span class="p">[</span><span class="s1">&#39;SalaryWomen&#39;</span><span class="p">])</span> <span class="o">/</span> <span class="n">mean_salary_gap_df</span><span class="p">[</span><span class="s1">&#39;SalaryMen&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="n">mean_salary_gap</span> <span class="o">=</span> <span class="n">mean_salary_gap_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;SalaryGapPercent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="n">mean_salary_gap</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>SalaryGapPercent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2014</td>
+      <td>25.065</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2015</td>
+      <td>23.649814</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2016</td>
+      <td>18.958623</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2017</td>
+      <td>14.428017</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2018</td>
+      <td>14.927359</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2019</td>
+      <td>16.585776</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2020</td>
+      <td>18.866154</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2021</td>
+      <td>21.314563</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2022</td>
+      <td>16.113038</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_alpha</span> <span class="o">=</span> <span class="mf">0.7</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
+    <span class="n">salary_gap_df</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;SalaryGapPercent&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span>
+    <span class="n">hover_name</span><span class="o">=</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Top-10 Salary Gap Between Men and Women&lt;br&gt;&lt;sup&gt;generally decreasing, but still male-favoured&lt;/sup&gt;&#39;</span><span class="p">,</span>
+    <span class="n">custom_data</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">],</span>
+    <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="p">[</span>
+        <span class="sa">f</span><span class="s1">&#39;rgba(233, 146, 119, </span><span class="si">{</span><span class="n">color_alpha</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">&#39;rgba(148, 233, 119, </span><span class="si">{</span><span class="n">color_alpha</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">&#39;rgba(119, 127, 233, </span><span class="si">{</span><span class="n">color_alpha</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">&#39;rgba(218, 119, 233, </span><span class="si">{</span><span class="n">color_alpha</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">&#39;rgba(218, 191, 162, </span><span class="si">{</span><span class="n">color_alpha</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">&#39;rgba(207, 150, 150, </span><span class="si">{</span><span class="n">color_alpha</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">&#39;rgba(167, 199, 213, </span><span class="si">{</span><span class="n">color_alpha</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">&#39;rgba(233, 119, 186, </span><span class="si">{</span><span class="n">color_alpha</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">&#39;rgba(154, 162, 221, </span><span class="si">{</span><span class="n">color_alpha</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">&#39;rgba(154, 221, 209, </span><span class="si">{</span><span class="n">color_alpha</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">range_y</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">48</span><span class="p">],</span>
+    <span class="n">markers</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Salary gap in percentage&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add male/female ratio in the legend names</span>
+<span class="n">total_male_participants_per_country_df</span> <span class="o">=</span> <span class="n">countries_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Gender == &quot;male&quot;&#39;</span><span class="p">)</span> \
+    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> \
+    <span class="o">.</span><span class="n">size</span><span class="p">()</span> \
+    <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="s1">&#39;TotalMale&#39;</span><span class="p">})</span>
+
+<span class="n">total_female_participants_per_country_df</span> <span class="o">=</span> <span class="n">countries_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Gender == &quot;female&quot;&#39;</span><span class="p">)</span> \
+    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> \
+    <span class="o">.</span><span class="n">size</span><span class="p">()</span> \
+    <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="s1">&#39;TotalFemale&#39;</span><span class="p">})</span>
+
+<span class="n">total_participants_per_country_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">total_male_participants_per_country_df</span><span class="p">,</span> <span class="n">total_female_participants_per_country_df</span><span class="p">)</span>
+<span class="n">total_participants_per_country_df</span><span class="p">[</span><span class="s1">&#39;MaleRatioPerFemale&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">total_participants_per_country_df</span><span class="p">[</span><span class="s1">&#39;TotalMale&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">total_participants_per_country_df</span><span class="p">[</span><span class="s1">&#39;TotalFemale&#39;</span><span class="p">]</span>
+
+<span class="c1"># Add female/male ratio for each legend name.</span>
+
+<span class="c1"># Example: {&#39;oldname&#39;: &#39;newname&#39;}</span>
+<span class="n">legend_names</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">total_participants_per_country_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">legend_names</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> (1/</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;MaleRatioPerFemale&#39;</span><span class="p">])</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">for_each_trace</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">legend_names</span><span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">name</span><span class="p">],</span> 
+                                      <span class="n">legendgroup</span><span class="o">=</span><span class="n">legend_names</span><span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">name</span><span class="p">],</span>
+                                      <span class="n">hovertemplate</span><span class="o">=</span><span class="s1">&#39;&lt;b&gt;&#39;</span> <span class="o">+</span> <span class="n">t</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;&lt;/b&gt;&lt;br&gt;Year: %</span><span class="si">{x:d}</span><span class="s1"> &lt;/br&gt; Salary gap: %</span><span class="si">{y:d}</span><span class="s1">%&lt;extra&gt;&lt;/extra&gt;&#39;</span><span class="p">))</span>
+
+<span class="c1"># Plot the mean salary scatters</span>
+<span class="n">mean_salary_line_fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">mean_salary_gap</span><span class="p">,</span>
+                               <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span>
+                               <span class="n">y</span><span class="o">=</span><span class="s1">&#39;SalaryGapPercent&#39;</span><span class="p">,</span>
+                               <span class="n">markers</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_traces</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">mean_salary_line_fig</span><span class="o">.</span><span class="n">select_traces</span><span class="p">()))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_annotation</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">2019.7</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">17.75</span><span class="p">,</span>
+                   <span class="n">showarrow</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                   <span class="n">xanchor</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span>
+                   <span class="n">yanchor</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span>
+                   <span class="n">textangle</span><span class="o">=-</span><span class="mi">12</span><span class="p">,</span>
+                   <span class="n">text</span><span class="o">=</span><span class="s1">&#39;mean salary gap&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add caption</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_annotation</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                   <span class="n">xref</span><span class="o">=</span><span class="s1">&#39;paper&#39;</span><span class="p">,</span> <span class="n">yref</span><span class="o">=</span><span class="s1">&#39;paper&#39;</span><span class="p">,</span>
+                   <span class="n">align</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span>
+                   <span class="n">showarrow</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                   <span class="n">xanchor</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span>
+                   <span class="n">yanchor</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span>
+                   <span class="n">text</span><span class="o">=</span><span class="s1">&#39;The top-10 countries with most survey respondents being developer.&lt;br&gt;Percentages above zero indicates a male-favoured salary gap.&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">legend</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Country with female/male ratio&#39;</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>                            <div id="0506c140-9c0d-49ee-b445-d7b368d4d2a9" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("0506c140-9c0d-49ee-b445-d7b368d4d2a9")) {                    Plotly.newPlot(                        "0506c140-9c0d-49ee-b445-d7b368d4d2a9",                        [{"customdata":[["Australia"],["Australia"],["Australia"],["Australia"],["Australia"],["Australia"],["Australia"],["Australia"],["Australia"]],"hovertemplate":"\u003cb\u003eAustralia\u003c\u002fb\u003e\u003cbr\u003eYear: %{x:d} \u003c\u002fbr\u003e Salary gap: %{y:d}%\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Australia","Australia","Australia","Australia","Australia","Australia","Australia","Australia","Australia"],"legendgroup":"Australia (1\u002f16)","line":{"color":"rgba(233, 146, 119, 0.7)","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"Australia (1\u002f16)","orientation":"v","showlegend":true,"x":[2014,2015,2016,2017,2018,2019,2020,2021,2022],"xaxis":"x","y":[13.957495692130959,21.210106382978726,7.232126778318023,15.640834960034688,19.570323320683958,17.284825622149576,15.08411922895953,23.36406322131421,17.127689490239973],"yaxis":"y","type":"scatter"},{"customdata":[["Canada"],["Canada"],["Canada"],["Canada"],["Canada"],["Canada"],["Canada"],["Canada"],["Canada"]],"hovertemplate":"\u003cb\u003eCanada\u003c\u002fb\u003e\u003cbr\u003eYear: %{x:d} \u003c\u002fbr\u003e Salary gap: %{y:d}%\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada"],"legendgroup":"Canada (1\u002f12)","line":{"color":"rgba(148, 233, 119, 0.7)","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"Canada (1\u002f12)","orientation":"v","showlegend":true,"x":[2014,2015,2016,2017,2018,2019,2020,2021,2022],"xaxis":"x","y":[18.885191347753743,32.29425939050319,20.756195513762364,16.15595687586354,12.696908631032294,13.095491332013529,12.4994837977156,10.094763151878297,11.836323249786686],"yaxis":"y","type":"scatter"},{"customdata":[["France"],["France"],["France"],["France"],["France"],["France"],["France"],["France"],["France"]],"hovertemplate":"\u003cb\u003eFrance\u003c\u002fb\u003e\u003cbr\u003eYear: %{x:d} \u003c\u002fbr\u003e Salary gap: %{y:d}%\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["France","France","France","France","France","France","France","France","France"],"legendgroup":"France (1\u002f20)","line":{"color":"rgba(119, 127, 233, 0.7)","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"France (1\u002f20)","orientation":"v","showlegend":true,"x":[2014,2015,2016,2017,2018,2019,2020,2021,2022],"xaxis":"x","y":[14.11510791366907,6.56623735050597,17.36000747873235,13.873423424021706,11.039129258668973,10.589286024492385,17.250648520384058,25.460604728812104,24.602957919250937],"yaxis":"y","type":"scatter"},{"customdata":[["Germany"],["Germany"],["Germany"],["Germany"],["Germany"],["Germany"],["Germany"],["Germany"],["Germany"]],"hovertemplate":"\u003cb\u003eGermany\u003c\u002fb\u003e\u003cbr\u003eYear: %{x:d} \u003c\u002fbr\u003e Salary gap: %{y:d}%\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Germany","Germany","Germany","Germany","Germany","Germany","Germany","Germany","Germany"],"legendgroup":"Germany (1\u002f21)","line":{"color":"rgba(218, 119, 233, 0.7)","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"Germany (1\u002f21)","orientation":"v","showlegend":true,"x":[2014,2015,2016,2017,2018,2019,2020,2021,2022],"xaxis":"x","y":[17.526477622138707,18.035849413545215,21.29440898553722,3.756773894765065,9.044773268827615,14.656101885954351,18.597207868540067,16.344386829753514,13.87602329624176],"yaxis":"y","type":"scatter"},{"customdata":[["Italy"],["Italy"],["Italy"],["Italy"],["Italy"],["Italy"],["Italy"],["Italy"],["Italy"]],"hovertemplate":"\u003cb\u003eItaly\u003c\u002fb\u003e\u003cbr\u003eYear: %{x:d} \u003c\u002fbr\u003e Salary gap: %{y:d}%\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Italy","Italy","Italy","Italy","Italy","Italy","Italy","Italy","Italy"],"legendgroup":"Italy (1\u002f32)","line":{"color":"rgba(218, 191, 162, 0.7)","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"Italy (1\u002f32)","orientation":"v","showlegend":true,"x":[2014,2015,2016,2017,2018,2019,2020,2021,2022],"xaxis":"x","y":[26.303854875283445,43.30882352941176,17.9120965832873,13.88284853541758,33.27488907525568,23.577626659285933,31.537348074723347,20.845272223280816,18.949828636773333],"yaxis":"y","type":"scatter"},{"customdata":[["Netherlands"],["Netherlands"],["Netherlands"],["Netherlands"],["Netherlands"],["Netherlands"],["Netherlands"],["Netherlands"],["Netherlands"]],"hovertemplate":"\u003cb\u003eNetherlands\u003c\u002fb\u003e\u003cbr\u003eYear: %{x:d} \u003c\u002fbr\u003e Salary gap: %{y:d}%\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Netherlands","Netherlands","Netherlands","Netherlands","Netherlands","Netherlands","Netherlands","Netherlands","Netherlands"],"legendgroup":"Netherlands (1\u002f18)","line":{"color":"rgba(207, 150, 150, 0.7)","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"Netherlands (1\u002f18)","orientation":"v","showlegend":true,"x":[2014,2015,2016,2017,2018,2019,2020,2021,2022],"xaxis":"x","y":[25.085518814139114,31.46974063400576,7.534315198877866,18.557285885671295,7.697670998619133,24.351013348241196,25.638567835758362,21.95803662005263,24.446754744578044],"yaxis":"y","type":"scatter"},{"customdata":[["Poland"],["Poland"],["Poland"],["Poland"],["Poland"],["Poland"],["Poland"],["Poland"],["Poland"]],"hovertemplate":"\u003cb\u003ePoland\u003c\u002fb\u003e\u003cbr\u003eYear: %{x:d} \u003c\u002fbr\u003e Salary gap: %{y:d}%\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Poland","Poland","Poland","Poland","Poland","Poland","Poland","Poland","Poland"],"legendgroup":"Poland (1\u002f23)","line":{"color":"rgba(167, 199, 213, 0.7)","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"Poland (1\u002f23)","orientation":"v","showlegend":true,"x":[2014,2015,2016,2017,2018,2019,2020,2021,2022],"xaxis":"x","y":[46.74556213017752,19.39188842742142,41.706238445644686,24.28023445247764,17.116379714997787,30.028013673046893,29.535810906688496,37.963002498039,15.699992264397148],"yaxis":"y","type":"scatter"},{"customdata":[["Spain"],["Spain"],["Spain"],["Spain"],["Spain"],["Spain"],["Spain"],["Spain"],["Spain"]],"hovertemplate":"\u003cb\u003eSpain\u003c\u002fb\u003e\u003cbr\u003eYear: %{x:d} \u003c\u002fbr\u003e Salary gap: %{y:d}%\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain","Spain"],"legendgroup":"Spain (1\u002f20)","line":{"color":"rgba(233, 119, 186, 0.7)","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"Spain (1\u002f20)","orientation":"v","showlegend":true,"x":[2014,2015,2016,2017,2018,2019,2020,2021,2022],"xaxis":"x","y":[44.14335664335665,23.212913143735584,23.176770663464925,17.95583662967833,3.768188100999248,7.391530148720444,16.146529667041424,24.130084301297437,11.562852895062193],"yaxis":"y","type":"scatter"},{"customdata":[["United Kingdom"],["United Kingdom"],["United Kingdom"],["United Kingdom"],["United Kingdom"],["United Kingdom"],["United Kingdom"],["United Kingdom"],["United Kingdom"]],"hovertemplate":"\u003cb\u003eUnited Kingdom\u003c\u002fb\u003e\u003cbr\u003eYear: %{x:d} \u003c\u002fbr\u003e Salary gap: %{y:d}%\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["United Kingdom","United Kingdom","United Kingdom","United Kingdom","United Kingdom","United Kingdom","United Kingdom","United Kingdom","United Kingdom"],"legendgroup":"United Kingdom (1\u002f15)","line":{"color":"rgba(154, 162, 221, 0.7)","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"United Kingdom (1\u002f15)","orientation":"v","showlegend":true,"x":[2014,2015,2016,2017,2018,2019,2020,2021,2022],"xaxis":"x","y":[35.41706191108582,28.0578596813942,20.149750638986813,13.37883023775702,22.271963665903343,15.273830205321865,13.50978981889189,21.27902087215123,15.479095317701507],"yaxis":"y","type":"scatter"},{"customdata":[["United States"],["United States"],["United States"],["United States"],["United States"],["United States"],["United States"],["United States"],["United States"]],"hovertemplate":"\u003cb\u003eUnited States\u003c\u002fb\u003e\u003cbr\u003eYear: %{x:d} \u003c\u002fbr\u003e Salary gap: %{y:d}%\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["United States","United States","United States","United States","United States","United States","United States","United States","United States"],"legendgroup":"United States (1\u002f10)","line":{"color":"rgba(154, 221, 209, 0.7)","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"United States (1\u002f10)","orientation":"v","showlegend":true,"x":[2014,2015,2016,2017,2018,2019,2020,2021,2022],"xaxis":"x","y":[8.470369028419235,12.950463106815363,12.46431731038739,6.79814385362892,12.793368561409627,9.610040157299819,8.862034489716603,11.70640021451836,7.548858316473223],"yaxis":"y","type":"scatter"},{"hovertemplate":"Year=%{x}\u003cbr\u003eSalaryGapPercent=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","line":{"color":"#343a42","dash":"solid"},"marker":{"symbol":"circle"},"mode":"markers+lines","name":"","orientation":"v","showlegend":false,"x":[2014,2015,2016,2017,2018,2019,2020,2021,2022],"xaxis":"x","y":[25.064999597815426,23.64981410603172,18.958622759699892,14.428016874931577,14.927359459639765,16.5857759056526,18.86615402084194,21.31456346610976,16.11303761305048],"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#343a42","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#343a42","#4edcda","#645cff","#f25fe9","#f74e4e","#2d8923","#f7b24e","#2b9694","#3a34b5","#a736a0","#b33c3c","#2d8923"],"font":{"color":"#343a42"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"#E5ECF6","showlakes":true,"showland":true,"subunitcolor":"white"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"#fdead4","plot_bgcolor":"rgba(0,0,0,0)","polar":{"angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"title":{"x":0.5},"xaxis":{"automargin":true,"gridcolor":"#d8bea1","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"#d8bea1","zerolinewidth":1},"yaxis":{"automargin":true,"gridcolor":"#d8bea1","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"#d8bea1","zerolinewidth":1}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Year"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Salary gap in percentage"},"range":[0,48]},"legend":{"title":{"text":"Country with female\u002fmale ratio"},"tracegroupgap":0},"title":{"text":"Top-10 Salary Gap Between Men and Women\u003cbr\u003e\u003csup\u003egenerally decreasing, but still male-favoured\u003c\u002fsup\u003e"},"annotations":[{"showarrow":false,"text":"mean salary gap","textangle":-12,"x":2019.7,"xanchor":"center","y":17.75,"yanchor":"bottom"},{"align":"right","showarrow":false,"text":"The top-10 countries with most survey respondents being developer.\u003cbr\u003ePercentages above zero indicates a male-favoured salary gap.","x":1,"xanchor":"right","xref":"paper","y":0,"yanchor":"bottom","yref":"paper"}]},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('0506c140-9c0d-49ee-b445-d7b368d4d2a9');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div></div></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By InfoVis Group J3
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
