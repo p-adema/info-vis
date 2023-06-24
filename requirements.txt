@@ -6,3 +6,4 @@ plotly
 seaborn
 pyarrow
 ghp-import
+statsmodels
