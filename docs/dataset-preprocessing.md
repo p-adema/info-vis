@@ -57,8 +57,8 @@ salary for men.  In mathematical notation, this is defined as:
 
 $$\textrm{SalaryGap} = \frac{S_{\textrm{man}} - S_{\textrm{woman}}}{S_{\textrm{man}}}$$
 
-In most graphs we show a percentage version of this, which is the salary gap
-formula described above multiplied by 100.
+In most graphs a percentage version of this is being shown, which is the salary
+gap formula described above multiplied by 100.
 
 Let's say in the Netherlands the average annual salary for men is &euro;80,000
 and for women &euro;60,000. Then the salary gap will be 25% using the
