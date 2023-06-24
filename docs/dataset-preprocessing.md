@@ -63,7 +63,7 @@ gap formula described above multiplied by 100.
 Let's say in the Netherlands the average annual salary for men is &euro;80,000
 and for women &euro;60,000. Then the salary gap will be 25% using the
 aforementioned calculation. If women are the ones making &euro;80,000 per year
-and men make &euro;60,000, then the salary gap will be -33,3%. We call the
-percentage outcome a *male-favoured gap* if the percentage is above zero. When
-the outcome is below zero, it is considered a *female-favoured gap*. Both men
-and women earn equal salary when the outcome is exactly zero.
+and men make &euro;60,000 per year, then the salary gap will be -33,3%. We call
+the percentage outcome a *male-favoured gap* if the percentage is above zero.
+When the outcome is below zero, it is considered a *female-favoured gap*. Both
+men and women earn equal salary when the outcome is exactly zero.
