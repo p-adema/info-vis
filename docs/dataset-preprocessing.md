@@ -46,7 +46,7 @@ dataset can be classified under three combinations:
   `CodingActivities`, `DevType`, `LearnCodeFrom`, `LangPresent`
 
 Variables that are currently being used are: `Year`, `Salary`, `YearsCodePro`,
-`Age`, `Education`, `RespondentType`, `Gender`, `Country`
+`Age`, `Education`, `RespondentType`, `Gender`, `Country` and `DevType`.
 
 **Aggregations**
 
