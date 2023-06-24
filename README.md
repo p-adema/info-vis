@@ -7,7 +7,7 @@
 Jupyter Book visualising the gender pay gap for software developers,
 using the Stack Overflow Annual Developer Survey data. For more details
 regarding the datasets source and the cleaning process, see the
-[Datasets](#datasets) section below.
+[Dataset and preprocessing](./docs/dataset-preprocessing.md) page.
 
 # Table of Contents
 
