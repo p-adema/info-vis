@@ -3,6 +3,8 @@
 This project uses the 2014-2022 datasets listed at
 [Stack Overflow Annual Developer Survey](https://insights.stackoverflow.com/survey).
 
+**Cleaning**
+
 The dataset cleaning task has been divided between Peter and Kim. At first, we
 weren't sure which years to include yet. Therefore, Kim did the 2011-2016
 datasets and Peter did the 2017-2022 datasets. After we decided that our topic
@@ -31,3 +33,27 @@ rather than a 145MB CSV file.
 After all, Peter and Kim together have manually inspected a total of 955 columns
 spanning 9 datasets and have reduced this to a total of 19 columns. The final
 dataset contains 535,759 rows.
+
+**Variable descriptions**
+
+In terms of variable type and measurement scale, the variables in the final
+dataset can be classified under three combinations:
+
+- Continuous / Ordinal variables: `Year`, `Salary`, `YearsCode`, `YearsCodePro`
+- Discrete / Ordinal variables: `JobSat`
+- Discrete / Nominal variables: `Age`, `Education`, `OrgSize`, `LastNewJob`,
+  `Employment`, `RespondentType`, `JobSeek`, `Gender`, `Student`, `Country`,
+  `CodingActivities`, `DevType`, `LearnCodeFrom`, `LangPresent`
+
+Variables that are currently being used are: `Year`, `Salary`, `YearsCodePro`,
+`Age`, `Education`, `RespondentType`, `Gender`, `Country`
+
+In general, most aggregations happen for calculating the salary gap between men
+and women relative to men. This is being done by taking the mean salary for both
+men and women, subtracting these means and finally divide the total by the mean
+salary for men.  In mathematical notation, this is defined as:
+
+$$\textrm{SalaryGap} = \frac{S_{\textrm{man}} - S_{\textrm{woman}}}{S_{\textrm{man}}}$$
+
+In most plots we plot a percentage version of this, which is the salary gap
+formula described above multiplied by 100.

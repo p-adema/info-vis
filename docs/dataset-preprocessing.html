@@ -62,11 +62,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/dataset-preprocessing';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="The salary gap in software development" href="../notebooks/story.html" />
-    <link rel="prev" title="Introduction" href="home.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -132,7 +134,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="home.html">
+<a class="navbar-brand logo" href="introduction.html">
   
   
   
@@ -146,7 +148,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="home.html">
+                <a class="reference internal" href="introduction.html">
                     Introduction
                 </a>
             </li>
@@ -306,6 +308,7 @@ document.write(`
 <h1>Dataset and preprocessing<a class="headerlink" href="#dataset-and-preprocessing" title="Permalink to this heading">#</a></h1>
 <p>This project uses the 2014-2022 datasets listed at
 <a class="reference external" href="https://insights.stackoverflow.com/survey">Stack Overflow Annual Developer Survey</a>.</p>
+<p><strong>Cleaning</strong></p>
 <p>The dataset cleaning task has been divided between Peter and Kim. At first, we
 weren’t sure which years to include yet. Therefore, Kim did the 2011-2016
 datasets and Peter did the 2017-2022 datasets. After we decided that our topic
@@ -329,6 +332,26 @@ rather than a 145MB CSV file.</p>
 <p>After all, Peter and Kim together have manually inspected a total of 955 columns
 spanning 9 datasets and have reduced this to a total of 19 columns. The final
 dataset contains 535,759 rows.</p>
+<p><strong>Variable descriptions</strong></p>
+<p>In terms of variable type and measurement scale, the variables in the final
+dataset can be classified under three combinations:</p>
+<ul class="simple">
+<li><p>Continuous / Ordinal variables: <code class="docutils literal notranslate"><span class="pre">Year</span></code>, <code class="docutils literal notranslate"><span class="pre">Salary</span></code>, <code class="docutils literal notranslate"><span class="pre">YearsCode</span></code>, <code class="docutils literal notranslate"><span class="pre">YearsCodePro</span></code></p></li>
+<li><p>Discrete / Ordinal variables: <code class="docutils literal notranslate"><span class="pre">JobSat</span></code></p></li>
+<li><p>Discrete / Nominal variables: <code class="docutils literal notranslate"><span class="pre">Age</span></code>, <code class="docutils literal notranslate"><span class="pre">Education</span></code>, <code class="docutils literal notranslate"><span class="pre">OrgSize</span></code>, <code class="docutils literal notranslate"><span class="pre">LastNewJob</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Employment</span></code>, <code class="docutils literal notranslate"><span class="pre">RespondentType</span></code>, <code class="docutils literal notranslate"><span class="pre">JobSeek</span></code>, <code class="docutils literal notranslate"><span class="pre">Gender</span></code>, <code class="docutils literal notranslate"><span class="pre">Student</span></code>, <code class="docutils literal notranslate"><span class="pre">Country</span></code>,
+<code class="docutils literal notranslate"><span class="pre">CodingActivities</span></code>, <code class="docutils literal notranslate"><span class="pre">DevType</span></code>, <code class="docutils literal notranslate"><span class="pre">LearnCodeFrom</span></code>, <code class="docutils literal notranslate"><span class="pre">LangPresent</span></code></p></li>
+</ul>
+<p>Variables that are currently being used are: <code class="docutils literal notranslate"><span class="pre">Year</span></code>, <code class="docutils literal notranslate"><span class="pre">Salary</span></code>, <code class="docutils literal notranslate"><span class="pre">YearsCodePro</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Age</span></code>, <code class="docutils literal notranslate"><span class="pre">Education</span></code>, <code class="docutils literal notranslate"><span class="pre">RespondentType</span></code>, <code class="docutils literal notranslate"><span class="pre">Gender</span></code>, <code class="docutils literal notranslate"><span class="pre">Country</span></code></p>
+<p>In general, most aggregations happen for calculating the salary gap between men
+and women relative to men. This is being done by taking the mean salary for both
+men and women, subtracting these means and finally divide the total by the mean
+salary for men.  In mathematical notation, this is defined as:</p>
+<div class="math notranslate nohighlight">
+\[\textrm{SalaryGap} = \frac{S_{\textrm{man}} - S_{\textrm{woman}}}{S_{\textrm{man}}}\]</div>
+<p>In most plots we plot a percentage version of this, which is the salary gap
+formula described above multiplied by 100.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -363,7 +386,7 @@ dataset contains 535,759 rows.</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="home.html"
+       href="introduction.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
