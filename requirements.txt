@@ -2,7 +2,7 @@ jupyter-book
 matplotlib
 numpy
 pandas
-plotly
+plotly>=5.15.0
 seaborn
 pyarrow
 ghp-import
