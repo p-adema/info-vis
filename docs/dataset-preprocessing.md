@@ -1,7 +1,15 @@
 # Dataset and preprocessing
 
-This project uses the 2014-2022 datasets listed at
-[Stack Overflow Annual Developer Survey](https://insights.stackoverflow.com/survey).
+At first, we decided each team member has to find at least one dataset of
+interest with sufficient data that contains at least two perspectives. During
+the first team call every dataset has been discussed along with its
+correlations. In the end, we choose the 2014-2022 datasets from the
+[Stack Overflow Annual Developer Survey](https://insights.stackoverflow.com/survey),
+as these datasets have correlations that could be of use for a potential topic.
+After some brainstorming during team meetings, we decided to dive into the world
+of gender pay gaps, as the dataset contains sufficient variables that can be
+used for two perspectives.
+
 
 **Cleaning**
 
@@ -11,11 +19,11 @@ datasets and Peter did the 2017-2022 datasets. After we decided that our topic
 is related to gender, the datasets from 2011, 2012 and 2013 became useless as
 they do not contain the gender of each participant.
 
-Each Stack Overflow dataset contained at least some changes, such as column
-renaming or structural changes. Peter and Kim both have manually merged columns
-by inspecting them one by one and merge the ones that overlap in the datasets
-they were responsible for. Columns that were not of use were immediately
-excluded during this process.
+Each Stack Overflow dataset contained at least some changes compared to other
+years, such as column renaming or structural changes. Peter and Kim both have
+manually merged columns by inspecting them one by one and merge the ones that
+overlap in the datasets they were responsible for. Columns that were not of use
+were immediately excluded during this process.
 
 After individually merging all columns, data had to be normalised for all years.
 This has been done by simply checking the unique values for each column and
