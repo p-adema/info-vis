@@ -21,3 +21,7 @@
 .bd-article-container h2 {
   color: #343a42;
 }
+
+nav.bd-links {
+  margin-right: 0;
+}
