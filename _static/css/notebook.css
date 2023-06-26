@@ -17,10 +17,13 @@ nav.bd-links {
 
 .toc-entry a.nav-link.active {
   border-left-color: #cead86;
-  color: #cead86;
 }
 
-nav.bd-links .active:hover > a, nav.bd-links .active > a {
+.toc-entry a.nav-link:hover,
+.toc-entry a.nav-link.active,
+nav.bd-links .active:hover > a,
+nav.bd-links .active > a,
+nav.bd-links li > a:hover {
   color: #cead86;
 }
 
@@ -32,12 +35,5 @@ nav.bd-links .active:hover > a, nav.bd-links .active > a {
 
   .bd-sidebar-secondary .sidebar-secondary-items {
     height: 100%;
-  }
-}
-
-@media (min-width: 1200px) {
-  footer.bd-footer-content {
-    max-width: 855.5px;
-    border-right: 1px solid var(--pst-color-border);
   }
 }
