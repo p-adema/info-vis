@@ -6,10 +6,14 @@ function enforceLightMode() {
   }
 
   // Enforce light mode, because that is when our story looks the best :)
-  if (localStorage.getItem('theme') !== 'light') {
+  if (document.querySelector('html').getAttribute('data-theme') !== 'light') {
+    // Switch theme right now.
+    document.querySelector('html').setAttribute('data-theme', 'light')
+
+    // Set light mode to be permanent for future visits.
     localStorage.setItem('mode', 'light');
     localStorage.setItem('theme', 'light');
-    window.location.reload();
+
   }
 }
 
