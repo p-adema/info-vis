@@ -1,0 +1,23 @@
+.theme-switch-button {
+  display: none !important;
+}
+
+.bd-sidebar-primary .sidebar-primary-items__end {
+  margin-top: 0;
+}
+
+@media (min-width: 992px) {
+  .bd-sidebar-secondary {
+    height: 100vh;
+    max-height: none;
+  }
+
+  .bd-sidebar-secondary .sidebar-secondary-items {
+    height: 100%;
+  }
+}
+
+.bd-article-container h1,
+.bd-article-container h2 {
+  color: #343a42;
+}

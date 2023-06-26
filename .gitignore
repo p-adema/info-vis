@@ -9,7 +9,7 @@
 !_toc.yml
 !/docs/
 !/data/
-!/images/
+!/static/
 !/notebooks/
 !/scripts/
 *.DS_Store
