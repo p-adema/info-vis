@@ -15,6 +15,15 @@ nav.bd-links {
   margin-right: 0;
 }
 
+.toc-entry a.nav-link.active {
+  border-left-color: #cead86;
+  color: #cead86;
+}
+
+nav.bd-links .active:hover > a, nav.bd-links .active > a {
+  color: #cead86;
+}
+
 @media (min-width: 992px) {
   .bd-sidebar-secondary {
     height: 100vh;
