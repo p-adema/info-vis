@@ -1,9 +1,9 @@
 # Dataset and preprocessing
 
-At first, we decided each team member has to find at least one dataset of
-interest with sufficient data that contains at least two perspectives. During
-the first team call every dataset has been discussed along with its
-correlations. In the end, we choose the 2014-2022 datasets from the
+At first, we decided that each team member has to find at least one dataset of
+interest with sufficient data from which at least two perspectives can be
+induced. During the first team call every dataset has been discussed along with
+its correlations. In the end, we choose the 2014-2022 datasets from the
 [Stack Overflow Annual Developer Survey](https://insights.stackoverflow.com/survey),
 as these datasets have correlations that could be of use for a potential topic.
 After some brainstorming during team meetings, we decided to dive into the world
