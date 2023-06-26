@@ -306,19 +306,26 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="dataset-and-preprocessing">
 <h1>Dataset and preprocessing<a class="headerlink" href="#dataset-and-preprocessing" title="Permalink to this heading">#</a></h1>
-<p>This project uses the 2014-2022 datasets listed at
-<a class="reference external" href="https://insights.stackoverflow.com/survey">Stack Overflow Annual Developer Survey</a>.</p>
+<p>At first, we decided each team member has to find at least one dataset of
+interest with sufficient data that contains at least two perspectives. During
+the first team call every dataset has been discussed along with its
+correlations. In the end, we choose the 2014-2022 datasets from the
+<a class="reference external" href="https://insights.stackoverflow.com/survey">Stack Overflow Annual Developer Survey</a>,
+as these datasets have correlations that could be of use for a potential topic.
+After some brainstorming during team meetings, we decided to dive into the world
+of gender pay gaps, as the dataset contains sufficient variables that can be
+used for two perspectives.</p>
 <p><strong>Cleaning</strong></p>
 <p>The dataset cleaning task has been divided between Peter and Kim. At first, we
 weren’t sure which years to include yet. Therefore, Kim did the 2011-2016
 datasets and Peter did the 2017-2022 datasets. After we decided that our topic
 is related to gender, the datasets from 2011, 2012 and 2013 became useless as
 they do not contain the gender of each participant.</p>
-<p>Each Stack Overflow dataset contained at least some changes, such as column
-renaming or structural changes. Peter and Kim both have manually merged columns
-by inspecting them one by one and merge the ones that overlap in the datasets
-they were responsible for. Columns that were not of use were immediately
-excluded during this process.</p>
+<p>Each Stack Overflow dataset contained at least some changes compared to other
+years, such as column renaming or structural changes. Peter and Kim both have
+manually merged columns by inspecting them one by one and merge the ones that
+overlap in the datasets they were responsible for. Columns that were not of use
+were immediately excluded during this process.</p>
 <p>After individually merging all columns, data had to be normalised for all years.
 This has been done by simply checking the unique values for each column and
 combine values with the same meaning.</p>
