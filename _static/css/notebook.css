@@ -6,6 +6,15 @@
   margin-top: 0;
 }
 
+.bd-article-container h1,
+.bd-article-container h2 {
+  color: #343a42;
+}
+
+nav.bd-links {
+  margin-right: 0;
+}
+
 @media (min-width: 992px) {
   .bd-sidebar-secondary {
     height: 100vh;
@@ -17,11 +26,9 @@
   }
 }
 
-.bd-article-container h1,
-.bd-article-container h2 {
-  color: #343a42;
-}
-
-nav.bd-links {
-  margin-right: 0;
+@media (min-width: 1200px) {
+  footer.bd-footer-content {
+    max-width: 855.5px;
+    border-right: 1px solid var(--pst-color-border);
+  }
 }
