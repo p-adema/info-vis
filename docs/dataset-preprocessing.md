@@ -25,11 +25,11 @@ manually merged columns by inspecting them one by one and merge the ones that
 overlap in the datasets they were responsible for. Columns that were not of use
 were immediately excluded during this process.
 
-After individually merging all columns, data had to be normalised for all years.
+After individually merging all columns, data had to be normalized for all years.
 This has been done by simply checking the unique values for each column and
 combine values with the same meaning.
 
-After both Peter and Kim had successfully cleaned and normalised their datasets,
+After both Peter and Kim had successfully cleaned and normalized their datasets,
 both datasets from 2014-2016 and 2017-2022 have been merged together into a
 single 2014-2022 dataset.
 
