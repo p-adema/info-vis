@@ -16,18 +16,18 @@ nav.bd-links {
 }
 
 .toc-entry a.nav-link.active {
-  border-left-color: #dd9c50;
+  border-left-color: #ea9a3c;
 }
 
-code,
 a,
+code.literal,
 .prev-next-area a p.prev-next-title,
 .toc-entry a.nav-link:hover,
 .toc-entry a.nav-link.active,
 nav.bd-links .active:hover > a,
 nav.bd-links .active > a,
 nav.bd-links li > a:hover {
-  color: #dd9c50;
+  color: #ea9a3c;
 }
 
 @media (min-width: 992px) {
