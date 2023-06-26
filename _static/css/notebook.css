@@ -19,7 +19,7 @@ nav.bd-links {
   border-left-color: #d0a470;
 }
 
-a:hover,
+a,
 .prev-next-area a p.prev-next-title,
 .toc-entry a.nav-link:hover,
 .toc-entry a.nav-link.active,
