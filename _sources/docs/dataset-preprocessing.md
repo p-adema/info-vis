@@ -10,39 +10,29 @@ After some brainstorming during team meetings, we decided to dive into the world
 of gender pay gaps, as the dataset contains sufficient variables that can be
 used for two perspectives.
 
-
-**Cleaning**
-
-The dataset cleaning task has been divided between Peter and Kim. At first, we
-weren't sure which years to include yet. Therefore, Kim did the 2011-2016
-datasets and Peter did the 2017-2022 datasets. After we decided that our topic
-is related to gender, the datasets from 2011, 2012 and 2013 became useless as
-they do not contain the gender of each participant.
+## Cleaning
 
 Each Stack Overflow dataset contained at least some changes compared to other
-years, such as column renaming or structural changes. Peter and Kim both have
-manually merged columns by inspecting them one by one and merge the ones that
-overlap in the datasets they were responsible for. Columns that were not of use
-were immediately excluded during this process.
+years, such as column renaming or structural changes. We had to go through two
+phases in order to clean everything properly. The first phase is where columns
+are renamed and restructured in order to merge them together. Columns have been
+manually merged by inspecting them one by one and merge the ones contain roughly
+the same name or content in terms of what they represent. Columns that were not
+of use were immediately excluded during this process.
 
-After individually merging all columns, data had to be normalized for all years.
-This has been done by simply checking the unique values for each column and
-combine values with the same meaning.
+The second phase involves normalizing the data. In general, this has been done
+by thoroughly inspecting the unique values for each column and combine values
+that represent the same meaning.
 
-After both Peter and Kim had successfully cleaned and normalized their datasets,
-both datasets from 2014-2016 and 2017-2022 have been merged together into a
-single 2014-2022 dataset.
+Finally, we have decided to use parquet `.pq` as the file type for our final
+dataset. This allows us to specify the datatype for each column and decrease the
+overall file size of the final dataset with additional gzip compression. This
+resulted in a 7.2MB parquet file, rather than a 145MB CSV file.
 
-We have decided to use parquet `.pq` as the file type. This allows us to specify
-the datatype for each column and decrease the overall file size of the final
-dataset with additional gzip compression. This resulted in a 7.2MB parquet file,
-rather than a 145MB CSV file.
+After all, 955 columns spanning 9 datasets have been reduced to a total of 19
+columns. The final dataset contains 535,759 rows.
 
-After all, Peter and Kim together have manually inspected a total of 955 columns
-spanning 9 datasets and have reduced this to a total of 19 columns. The final
-dataset contains 535,759 rows.
-
-**Variable descriptions**
+## Variable descriptions
 
 In terms of variable type and measurement scale, the variables in the final
 dataset can be classified under three combinations:
@@ -56,7 +46,7 @@ dataset can be classified under three combinations:
 Variables that are currently being used are: `Year`, `Salary`, `YearsCodePro`,
 `Age`, `Education`, `RespondentType`, `Gender`, `Country` and `DevType`.
 
-**Aggregations**
+## Aggregations
 
 In general, most aggregations happen for calculating the salary gap between men
 and women relative to men. This is being done by taking the mean salary for both

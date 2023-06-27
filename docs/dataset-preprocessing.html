@@ -158,6 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Dataset and preprocessing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/story.html">The salary gap in software development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reflection.html">Reflection</a></li>
 </ul>
 
     </div>
@@ -281,7 +282,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -297,6 +300,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning">Cleaning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-descriptions">Variable descriptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregations">Aggregations</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -317,31 +330,27 @@ as these datasets have correlations that could be of use for a potential topic.
 After some brainstorming during team meetings, we decided to dive into the world
 of gender pay gaps, as the dataset contains sufficient variables that can be
 used for two perspectives.</p>
-<p><strong>Cleaning</strong></p>
-<p>The dataset cleaning task has been divided between Peter and Kim. At first, we
-weren’t sure which years to include yet. Therefore, Kim did the 2011-2016
-datasets and Peter did the 2017-2022 datasets. After we decided that our topic
-is related to gender, the datasets from 2011, 2012 and 2013 became useless as
-they do not contain the gender of each participant.</p>
+<section id="cleaning">
+<h2>Cleaning<a class="headerlink" href="#cleaning" title="Permalink to this heading">#</a></h2>
 <p>Each Stack Overflow dataset contained at least some changes compared to other
-years, such as column renaming or structural changes. Peter and Kim both have
-manually merged columns by inspecting them one by one and merge the ones that
-overlap in the datasets they were responsible for. Columns that were not of use
-were immediately excluded during this process.</p>
-<p>After individually merging all columns, data had to be normalized for all years.
-This has been done by simply checking the unique values for each column and
-combine values with the same meaning.</p>
-<p>After both Peter and Kim had successfully cleaned and normalized their datasets,
-both datasets from 2014-2016 and 2017-2022 have been merged together into a
-single 2014-2022 dataset.</p>
-<p>We have decided to use parquet <code class="docutils literal notranslate"><span class="pre">.pq</span></code> as the file type. This allows us to specify
-the datatype for each column and decrease the overall file size of the final
-dataset with additional gzip compression. This resulted in a 7.2MB parquet file,
-rather than a 145MB CSV file.</p>
-<p>After all, Peter and Kim together have manually inspected a total of 955 columns
-spanning 9 datasets and have reduced this to a total of 19 columns. The final
-dataset contains 535,759 rows.</p>
-<p><strong>Variable descriptions</strong></p>
+years, such as column renaming or structural changes. We had to go through two
+phases in order to clean everything properly. The first phase is where columns
+are renamed and restructured in order to merge them together. Columns have been
+manually merged by inspecting them one by one and merge the ones contain roughly
+the same name or content in terms of what they represent. Columns that were not
+of use were immediately excluded during this process.</p>
+<p>The second phase involves normalizing the data. In general, this has been done
+by thoroughly inspecting the unique values for each column and combine values
+that represent the same meaning.</p>
+<p>Finally, we have decided to use parquet <code class="docutils literal notranslate"><span class="pre">.pq</span></code> as the file type for our final
+dataset. This allows us to specify the datatype for each column and decrease the
+overall file size of the final dataset with additional gzip compression. This
+resulted in a 7.2MB parquet file, rather than a 145MB CSV file.</p>
+<p>After all, 955 columns spanning 9 datasets have been reduced to a total of 19
+columns. The final dataset contains 535,759 rows.</p>
+</section>
+<section id="variable-descriptions">
+<h2>Variable descriptions<a class="headerlink" href="#variable-descriptions" title="Permalink to this heading">#</a></h2>
 <p>In terms of variable type and measurement scale, the variables in the final
 dataset can be classified under three combinations:</p>
 <ul class="simple">
@@ -353,7 +362,9 @@ dataset can be classified under three combinations:</p>
 </ul>
 <p>Variables that are currently being used are: <code class="docutils literal notranslate"><span class="pre">Year</span></code>, <code class="docutils literal notranslate"><span class="pre">Salary</span></code>, <code class="docutils literal notranslate"><span class="pre">YearsCodePro</span></code>,
 <code class="docutils literal notranslate"><span class="pre">Age</span></code>, <code class="docutils literal notranslate"><span class="pre">Education</span></code>, <code class="docutils literal notranslate"><span class="pre">RespondentType</span></code>, <code class="docutils literal notranslate"><span class="pre">Gender</span></code>, <code class="docutils literal notranslate"><span class="pre">Country</span></code> and <code class="docutils literal notranslate"><span class="pre">DevType</span></code>.</p>
-<p><strong>Aggregations</strong></p>
+</section>
+<section id="aggregations">
+<h2>Aggregations<a class="headerlink" href="#aggregations" title="Permalink to this heading">#</a></h2>
 <p>In general, most aggregations happen for calculating the salary gap between men
 and women relative to men. This is being done by taking the mean salary for both
 men and women, subtracting these means and finally divide the total by the mean
@@ -369,6 +380,7 @@ and men make €60,000 per year, then the salary gap will be -33,3%. We call
 the percentage outcome a <em>male-favoured gap</em> if the percentage is above zero.
 When the outcome is below zero, it is considered a <em>female-favoured gap</em>. Both
 men and women earn equal salary when the outcome is exactly zero.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -429,6 +441,22 @@ men and women earn equal salary when the outcome is exactly zero.</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning">Cleaning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-descriptions">Variable descriptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregations">Aggregations</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
