@@ -37,11 +37,13 @@ single dataset containing 19 columns and 535,759 rows.
 In terms of variable type and measurement scale, the variables in the final
 dataset can be classified under three combinations:
 
-- Continuous / Ordinal variables: `Year`, `Salary`, `YearsCode`, `YearsCodePro`
+- Continuous / Ordinal variables: `Salary`
 - Discrete / Ordinal variables: `JobSat`
-- Discrete / Nominal variables: `Age`, `Education`, `OrgSize`, `LastNewJob`,
+- Discrete / Nominal variables: `Education`, `OrgSize`, `LastNewJob`,
   `Employment`, `RespondentType`, `JobSeek`, `Gender`, `Student`, `Country`,
   `CodingActivities`, `DevType`, `LearnCodeFrom`, `LangPresent`
+- Discrete / Interval variables: `Year`
+- Discrete / Ratio variables: `YearsCode`, `YearsCodePro`, `Age`
 
 Variables that are currently being used are: `Year`, `Salary`, `YearsCodePro`,
 `Age`, `Education`, `RespondentType`, `Gender`, `Country` and `DevType`.
@@ -49,9 +51,9 @@ Variables that are currently being used are: `Year`, `Salary`, `YearsCodePro`,
 ## Aggregations
 
 In general, most aggregations happen for calculating the salary gap between men
-and women relative to men. This is being done by taking the mean salary for both
-men and women, subtracting these means and finally divide the total by the mean
-salary for men.  In mathematical notation, this is defined as:
+and women relative to men. This is done by taking the mean salary for both men
+and women, subtracting these means and finally divide the total by the mean
+salary for men. In mathematical notation, this is defined as:
 
 $$\textrm{SalaryGap} = \frac{S_{\textrm{man}} - S_{\textrm{woman}}}{S_{\textrm{man}}}$$
 

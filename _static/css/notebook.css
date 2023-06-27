@@ -16,7 +16,7 @@ nav.bd-links {
 }
 
 .toc-entry a.nav-link.active {
-  border-left-color: #ea9a3c;
+  border-left-color: #fcab36;
 }
 
 a,
@@ -27,7 +27,7 @@ code.literal,
 nav.bd-links .active:hover > a,
 nav.bd-links .active > a,
 nav.bd-links li > a:hover {
-  color: #ea9a3c;
+  color: #fcab36;
 }
 
 @media (min-width: 992px) {
