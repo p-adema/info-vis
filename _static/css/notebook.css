@@ -30,14 +30,6 @@ nav.bd-links li > a:hover {
   color: #fcab36;
 }
 
-a:hover,
-.prev-next-area a p.prev-next-title:hover,
-.toc-entry a.nav-link:hover,
-nav.bd-links .active:hover > a,
-nav.bd-links li > a:hover {
-  cursor: pointer;
-}
-
 .logo__image {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
