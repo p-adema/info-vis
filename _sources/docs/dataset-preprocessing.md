@@ -29,8 +29,8 @@ dataset. This allows us to specify the datatype for each column and decrease the
 overall file size of the final dataset with additional gzip compression. This
 resulted in a 7.2MB parquet file, rather than a 145MB CSV file.
 
-After all, 955 columns spanning 9 datasets have been reduced to a total of 19
-columns. The final dataset contains 535,759 rows.
+After all, a total of 955 columns spanning 9 datasets have been reduced to a
+single dataset containing only 19 columns and 535,759 rows.
 
 ## Variable descriptions
 
