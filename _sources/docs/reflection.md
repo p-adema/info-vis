@@ -1,8 +1,8 @@
 # Reflection
 
-## Peerfeedback
+## Peer feedback
 
-On June 22th, 2023, our team J3 gathered with group R3 and R4 for peerfeedback,
+On June 22th, 2023, our team J3 gathered with group R3 and R4 for peer feedback,
 where one group at a time pitched the work that has been done in the past 3
 weeks. After the pitch, the two other groups gave feedback on what has been done
 well, as well as things to improve on.
