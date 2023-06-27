@@ -12,10 +12,10 @@ data story looked really well along with the fact that we hide our all
 codeblocks inside the story, which gives it the clean look it still has today.
 
 Below is a list of the feedback provided from group R3 and R4, as well as the TAs:
-- Have a look at maturnity leave for women and see if that could be a reason why women are getting less paid than men.
-- All graphs should have captions, as some of them still don't have one.
+- Have a look at maturnity leave for women and see if that could be a reason why women are getting less paid than men
+- All graphs should have captions, as some of them still don't have one
 - Add a regression line for the "Gender Ratio of Position vs Pay Gap" graph
-- Add missing dataset-preprocessing, reflection, and work-distribution pages in the notebook.
+- Add missing dataset-preprocessing, reflection, and work-distribution pages in the notebook
 
 Later on we as a team agreed all of this was proper feedback to work one. Right
 after the day of feedback we have implemented all of the above feedback.
