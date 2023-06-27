@@ -22,7 +22,7 @@ of use were immediately excluded during this process.
 
 The second phase involves normalizing the data. In general, this has been done
 by thoroughly inspecting the unique values for each column and combine values
-that represent the same meaning.
+that represent similar meaning.
 
 Finally, we have decided to use parquet `.pq` as the file type for our final
 dataset. This allows us to specify the datatype for each column and decrease the
