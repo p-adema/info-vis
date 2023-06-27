@@ -32,6 +32,7 @@ nav.bd-links li > a:hover {
 code.literal {
   background-color: #fdebd3;
   color: #333a42;
+  border: 1px solid #d8bea1;
 }
 
 .logo__image {
