@@ -35,15 +35,16 @@ single dataset containing 19 columns and 535,759 rows.
 ## Variable descriptions
 
 In terms of variable type and measurement scale, the variables in the final
-dataset can be classified under three combinations:
+dataset can be classified under several combinations:
 
 - Continuous / Ordinal variables: `Salary`
+- Continuous / Ratio variables: `YearsCode`, `YearsCodePro`
 - Discrete / Ordinal variables: `JobSat`
 - Discrete / Nominal variables: `Education`, `OrgSize`, `LastNewJob`,
   `Employment`, `RespondentType`, `JobSeek`, `Gender`, `Student`, `Country`,
   `CodingActivities`, `DevType`, `LearnCodeFrom`, `LangPresent`
 - Discrete / Interval variables: `Year`
-- Discrete / Ratio variables: `YearsCode`, `YearsCodePro`, `Age`
+- Discrete / Ratio variables: `Age`
 
 Variables that are currently being used are: `Year`, `Salary`, `YearsCodePro`,
 `Age`, `Education`, `RespondentType`, `Gender`, `Country` and `DevType`.
