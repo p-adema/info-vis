@@ -7,3 +7,4 @@ chapters:
   - file: docs/dataset-preprocessing.md
   - file: notebooks/story.ipynb
   - file: docs/reflection.md
+  - file: docs/work-distribution.md
