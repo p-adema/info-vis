@@ -4,9 +4,9 @@
 title: Gender Pay Gap
 author: InfoVis Group J3
 copyright: "2023"
-logo: images/logo.jpg
+logo: static/images/logo.jpg
 html:
-  favicon: images/favicon.ico
+  favicon: static/images/favicon.ico
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
