@@ -13,7 +13,7 @@ Peter first worked on cleaning the survey years 2017-2022. He then participated 
 
 ## Wim
 
-Wim participated in improving the graphs. He was also responsible for creating the basis of the storyline and also helped improve the storyline during the project.
+Wim participated in improving the graphs. He was also responsible for creating the basis of the storyline and helped further improve the storyline during the project.
 
 ## Aize
 
