@@ -14,9 +14,8 @@ In particular, we will explore the correlation between yearly salary and feature
 [Click here to read the data story](../notebooks/story.ipynb)
 
 **Authors**
+
 - Peter Adema
 - Aize van Basten Batenburg
 - Wim Berkelmans
 - Kim Koomen
-
-**GitHub repository:** [https://github.com/p-adema/info-vis](https://github.com/p-adema/info-vis)

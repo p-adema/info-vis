@@ -1,59 +1,60 @@
 # Dataset and preprocessing
 
-This project uses the 2014-2022 datasets listed at
-[Stack Overflow Annual Developer Survey](https://insights.stackoverflow.com/survey).
+At first, we decided that each team member has to find at least one dataset of
+interest with sufficient data from which at least two perspectives can be
+induced. During the first team call, every dataset has been discussed along with
+possible correlations. In the end, we choose the 2014-2022 datasets from the
+[Stack Overflow Annual Developer Survey](https://insights.stackoverflow.com/survey),
+as these datasets have correlations that could be of use for a potential topic.
+After some brainstorming during team meetings, we decided to dive into the world
+of gender pay gaps, as the dataset contains sufficient variables that can be
+used for two perspectives.
 
-**Cleaning**
+## Cleaning
 
-The dataset cleaning task has been divided between Peter and Kim. At first, we
-weren't sure which years to include yet. Therefore, Kim did the 2011-2016
-datasets and Peter did the 2017-2022 datasets. After we decided that our topic
-is related to gender, the datasets from 2011, 2012 and 2013 became useless as
-they do not contain the gender of each participant.
+Each Stack Overflow dataset contained at least some changes compared to other
+years, such as column renaming or structural changes. We had to go through two
+phases in order to clean everything properly. The first phase is where columns
+are renamed and restructured in order to merge them together. Columns have been
+manually merged by inspecting them one by one and merge the ones contain roughly
+the same name or content in terms of what they represent. Columns that were not
+of use were immediately excluded during this process.
 
-Each Stack Overflow dataset contained at least some changes, such as column
-renaming or structural changes. Peter and Kim both have manually merged columns
-by inspecting them one by one and merge the ones that overlap in the datasets
-they were responsible for. Columns that were not of use were immediately
-excluded during this process.
+The second phase involves normalizing the data. In general, this has been done
+by thoroughly inspecting the unique values for each column and combine values
+that represent similar meaning.
 
-After individually merging all columns, data had to be normalised for all years.
-This has been done by simply checking the unique values for each column and
-combine values with the same meaning.
+Finally, we have decided to use parquet `.pq` as the file type for our final
+dataset. This allows us to specify the datatype for each column and decrease the
+overall file size of the final dataset with additional gzip compression. This
+resulted in a 7.2MB parquet file, rather than a 145MB CSV file.
 
-After both Peter and Kim had successfully cleaned and normalised their datasets,
-both datasets from 2014-2016 and 2017-2022 have been merged together into a
-single 2014-2022 dataset.
+After all, a total of 955 columns spanning 9 datasets have been reduced to a
+single dataset containing 19 columns and 535,759 rows.
 
-We have decided to use parquet `.pq` as the file type. This allows us to specify
-the datatype for each column and decrease the overall file size of the final
-dataset with additional gzip compression. This resulted in a 7.2MB parquet file,
-rather than a 145MB CSV file.
-
-After all, Peter and Kim together have manually inspected a total of 955 columns
-spanning 9 datasets and have reduced this to a total of 19 columns. The final
-dataset contains 535,759 rows.
-
-**Variable descriptions**
+## Variable descriptions
 
 In terms of variable type and measurement scale, the variables in the final
-dataset can be classified under three combinations:
+dataset can be classified under several combinations:
 
-- Continuous / Ordinal variables: `Year`, `Salary`, `YearsCode`, `YearsCodePro`
+- Continuous / Ordinal variables: `Salary`
+- Continuous / Ratio variables: `YearsCode`, `YearsCodePro`
 - Discrete / Ordinal variables: `JobSat`
-- Discrete / Nominal variables: `Age`, `Education`, `OrgSize`, `LastNewJob`,
+- Discrete / Nominal variables: `Education`, `OrgSize`, `LastNewJob`,
   `Employment`, `RespondentType`, `JobSeek`, `Gender`, `Student`, `Country`,
   `CodingActivities`, `DevType`, `LearnCodeFrom`, `LangPresent`
+- Discrete / Interval variables: `Year`
+- Discrete / Ratio variables: `Age`
 
 Variables that are currently being used are: `Year`, `Salary`, `YearsCodePro`,
 `Age`, `Education`, `RespondentType`, `Gender`, `Country` and `DevType`.
 
-**Aggregations**
+## Aggregations
 
 In general, most aggregations happen for calculating the salary gap between men
-and women relative to men. This is being done by taking the mean salary for both
-men and women, subtracting these means and finally divide the total by the mean
-salary for men.  In mathematical notation, this is defined as:
+and women relative to men. This is done by taking the mean salary for both men
+and women, subtracting these means and finally divide the total by the mean
+salary for men. In mathematical notation, this is defined as:
 
 $$\textrm{SalaryGap} = \frac{S_{\textrm{man}} - S_{\textrm{woman}}}{S_{\textrm{man}}}$$
 

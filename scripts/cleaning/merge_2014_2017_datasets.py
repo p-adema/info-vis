@@ -8,8 +8,8 @@ columns will be renamed to those of 2017-2022.
 Usage: ./merge_datasets.py
 
 NOTE: This file assumes in the same directory two dataset files:
-(1) 2014_2016.csv: pre-cleaned and normalised dataset from 2014-2016.
-(2) SO_2_0.pq.gz: pre-cleaned and normalised dataset from 2017-2022.
+(1) 2014_2016.csv: pre-cleaned and normalized dataset from 2014-2016.
+(2) SO_2_0.pq.gz: pre-cleaned and normalized dataset from 2017-2022.
 
 The output file will be both CSV (SO_2014_2022.csv) and parquet (SO_2014_2022.pq).
 The CSV is mainly used for debugging, because it is easy to open in third-pary software.
@@ -20,13 +20,13 @@ import pandas as pd
 import numpy as np
 import re
 
-def normalise_coding_activities(value):
+def normalize_coding_activities(value):
     if value is np.nan:
         return value
 
     return 'hobby' if 'per week' in value else np.nan
 
-def normalise_salary(value):
+def normalize_salary(value):
     if value is np.nan or value in ['Other (please specify)', 'Student / Unemployed', 'Rather not say', 'Unemployed']:
         return np.nan
 
@@ -54,7 +54,7 @@ def normalise_salary(value):
     new_value = range_low + diff / 2
     return new_value
 
-def normalise_education(row: pd.Series) -> pd.Series:
+def normalize_education(row: pd.Series) -> pd.Series:
     edu = row['Education']
 
     if edu is np.nan or edu is pd.NA:
@@ -97,7 +97,7 @@ def normalise_education(row: pd.Series) -> pd.Series:
 
     return new_row
 
-def normalise_df2017_lang_present(value):
+def normalize_df2017_lang_present(value):
     if value is np.nan or value is pd.NA:
         return value
 
@@ -135,7 +135,7 @@ POPULAR_LANGS = ['ABAP', 'APL', 'Ada', 'Apex', 'Assembly', 'AutoHotkey', 'Awk',
                  'Shell', 'Smalltalk', 'Solidity', 'Swift', 'Tcl', 'TypeScript',
                  'VB.NET', 'VBScript', 'Visual Basic', 'WebAssembly', 'Bash']
 
-def normalise_df2014_lang_present(value):
+def normalize_df2014_lang_present(value):
     if value is np.nan or value is pd.NA:
         return value
 
@@ -217,9 +217,9 @@ def main():
 
     df2014_renamed = df2014_renamed.apply(add_student_col, axis=1)
 
-    df2014_renamed = df2014_renamed.apply(normalise_education, axis=1)
+    df2014_renamed = df2014_renamed.apply(normalize_education, axis=1)
 
-    df2014_renamed['Salary'] = df2014_renamed['Salary'].apply(normalise_salary)
+    df2014_renamed['Salary'] = df2014_renamed['Salary'].apply(normalize_salary)
 
     df2014_renamed['JobSat'] = df2014_renamed['JobSat'].replace({
         'I love my job': 5,
@@ -376,7 +376,7 @@ def main():
         'Timor-Leste': 'East Timor',
     })
 
-    df2014_renamed['CodingActivities'].apply(normalise_coding_activities)
+    df2014_renamed['CodingActivities'].apply(normalize_coding_activities)
 
     df2014_renamed['DevType'] = df2014_renamed['DevType'].replace({
         "I don't work in tech": np.nan,
@@ -415,9 +415,9 @@ def main():
         'other': np.nan,
     })
 
-    df2017['LangPresent'] = df2017['LangPresent'].apply(normalise_df2017_lang_present)
+    df2017['LangPresent'] = df2017['LangPresent'].apply(normalize_df2017_lang_present)
 
-    df2014_renamed['LangPresent'] = df2014_renamed['LangPresent'].apply(normalise_df2014_lang_present)
+    df2014_renamed['LangPresent'] = df2014_renamed['LangPresent'].apply(normalize_df2014_lang_present)
 
     combined_df = pd.concat([df2017, df2014_renamed]).drop(['LangFuture'], axis=1).sort_values(['Year'], ascending=False).reset_index(drop=True)
 

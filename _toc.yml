@@ -6,3 +6,4 @@ root: docs/introduction.md
 chapters:
   - file: docs/dataset-preprocessing.md
   - file: notebooks/story.ipynb
+  - file: docs/reflection.md
