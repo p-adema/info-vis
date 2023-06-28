@@ -6,12 +6,12 @@ meeting, each team member presented a dataset along with at least two different
 perspectives. We then chose the subject and data that best suited the
 requirements for the project. Our first step after determining the subject was
 to clean and merge the datasets from each year to form one singular dataset, for
-more information, see [Data and preprocessing](/docs/dataset-preprocessing.md).
+more information, see [Data and preprocessing](dataset-preprocessing.md).
 We also started to discuss possible graphs that could be made to support the
 different perspectives. We then started making the graphs and work on a story
-that builds a narrative around them, which led to the our draft version. After
-the cleaning and merging process was complete, we further improved the graphs as
-well as the story. Then, with the help of the given peer feedback, we created
+that builds a narrative around them, which led to the our draft version.
+Furthermore, the remaining time has been used to further improve the graphs as
+well as the story. Finally, with the help of the given peer feedback, we created
 the final data story.
 
 
