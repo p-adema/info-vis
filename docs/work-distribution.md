@@ -5,7 +5,7 @@ Our method of communication during this project consisted of seminars (werkcolle
 
 ## Kim
 
-Kim took the responsibility of coordinating the project. He cleaned the subsets 2014-2016 and merged 2014-2022 into a single dataset. He participated in the making of the graphs and their associated captions. He was also responsible for taking notes during meetings and made a clear overview of everyone's responsibilities. The intro was also written by Kim.
+Kim took the responsibility of coordinating the project. He cleaned the subsets 2014-2016 and merged those with the 2017-2022 subsets (cleaned by Peter) into a single 2014-2022 single dataset. He participated in the making of the graphs and their associated captions, as well as coming up with the overal design. He was also responsible for taking notes during meetings and made a clear overview of everyone's responsibilities. The intro was also written by Kim.
 
 ## Peter
 
@@ -13,8 +13,8 @@ Peter first worked on cleaning the survey years 2017-2022. He then participated 
 
 ## Wim
 
-Wim participated in improving the graphs. He was also responsible for creating the basis of the storyline and helped further improve the storyline during the project.
+Wim participated in improving the graphs and was mainly responsible for creating a strong basis of the storyline. Furthermore, he looked into several research papers that support the perspectives and continued to assist on the storyline during the project.
 
 ## Aize
 
-Aize participated in the making of the graphs and helped present the project during peer feedback. The work distribution was also written by Aize.
+Aize contributed to the development of the graphs and presented the project during peer feedback. The work distribution was also written by Aize.
