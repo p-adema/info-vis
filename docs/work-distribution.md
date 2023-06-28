@@ -5,7 +5,7 @@ Our method of communication during this project consisted of seminars (werkcolle
 
 ## Kim
 
-Kim took the responsibility of coordinating the project. He cleaned the subsets 2014-2016 and merged those with the 2017-2022 subsets (cleaned by Peter) into a single 2014-2022 single dataset. He participated in the making of the graphs and their associated captions, as well as coming up with the overal design. He was also responsible for taking notes during meetings and made a clear overview of everyone's responsibilities. The intro was also written by Kim.
+Kim took the responsibility of coordinating the project. He cleaned the subsets 2014-2016 and merged those with the 2017-2022 subsets (cleaned by Peter) into a single 2014-2022 single dataset. He participated in the making of the graphs and their associated captions, as well as coming up with the overal design. He was also responsible for taking notes during meetings and made a clear overview of everyone's responsibilities.
 
 ## Peter
 
