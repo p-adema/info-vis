@@ -14,6 +14,7 @@ regarding the datasets source and the cleaning process, see the
 - [Information Visualisation: the Gender Pay Gap](#information-visualisation-the-gender-pay-gap)
 - [Table of Contents](#table-of-contents)
 - [Getting started](#getting-started)
+- [Structure](#structure)
 - [Usage](#usage)
 - [Deploy](#deploy)
 - [Dataset cleaning scripts](#dataset-cleaning-scripts)
@@ -33,6 +34,23 @@ Additionally, install `conda` to setup a local environment.
 - [Linux installation instructions](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html)
 
 In case you don't have `jupyter` installed locally, simply run `pip3 install jupyter`.
+
+# Structure
+
+```
+.
+├── LICENSE             # Code license
+├── README.md           # General project information and instructions
+├── _build              # Jupyter build that will be deployed
+├── _config.yml         # Jupyter config file
+├── _toc.yml            # Jupyter Table of Contents config file
+├── data                # Contains dataset including cleaning scripts
+├── docs                # Files to be published on GitHub Pages
+├── notebooks           # Contains all notebook graphs used for the data story
+├── requirements.txt    # Project dependencies
+├── scripts             # Additional scripts used for deployment or cleaning
+└── static              # Images, css and js files to be published on GitHub Pages
+```
 
 # Usage
 

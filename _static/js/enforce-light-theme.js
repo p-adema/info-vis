@@ -1,20 +1,21 @@
-function enforceLightMode() {
-  // Remove theme switcher, disallowing dark mode.
-  const switchButton = document.querySelector('.theme-switch-button');
-  if (typeof switchButton !== 'undefined') {
-    switchButton.remove();
-  }
+(($, window, document) => {
 
-  // Enforce light mode, because that is when our story looks the best :)
-  if (document.querySelector('html').getAttribute('data-theme') !== 'light') {
-    // Switch theme right now.
-    document.querySelector('html').setAttribute('data-theme', 'light')
+  $(window).load(function() {
+    // Remove theme switcher, disallowing dark mode.
+    const switchButton = $('.theme-switch-button');
+    if (switchButton.length > 0) {
+      switchButton.remove();
+    }
 
-    // Set light mode to be permanent for future visits.
-    localStorage.setItem('mode', 'light');
-    localStorage.setItem('theme', 'light');
+    // Enforce light mode, because that is when our story looks the best :)
+    if ($('html').attr('data-theme') !== 'light') {
+      // Switch theme right now.
+      $('html').attr('data-theme', 'light');
 
-  }
-}
+      // Set light mode to be permanent for future visits.
+      localStorage.setItem('mode', 'light');
+      localStorage.setItem('theme', 'light');
+    }
+  });
 
-window.addEventListener('load', enforceLightMode);
+})(jQuery, window, document);
