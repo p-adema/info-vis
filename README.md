@@ -40,7 +40,7 @@ In case you don't have `jupyter` installed locally, simply run `pip3 install jup
 ```
 .
 ├── LICENSE             # Code license
-├── README.md           # Project instructions
+├── README.md           # General project information and instructions
 ├── _build              # Jupyter build that will be deployed
 ├── _config.yml         # Jupyter config file
 ├── _toc.yml            # Jupyter Table of Contents config file
