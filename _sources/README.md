@@ -1,4 +1,4 @@
-![gender pay gap banner](./images/banner.png?)
+![gender pay gap banner](./static/images/banner.png?)
 
 [Click here to view the data story](https://p-adema.github.io/info-vis/)
 
