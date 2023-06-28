@@ -7,6 +7,7 @@ copyright: "2023"
 logo: static/images/logo.jpg
 html:
   favicon: static/images/favicon.ico
+  use_repository_button: true
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
