@@ -12,13 +12,13 @@ used for two perspectives.
 
 ## Cleaning
 
-Each Stack Overflow dataset contained at least some changes compared to other
+Each Stack Overflow dataset contains at least some changes compared to other
 years, such as column renaming or structural changes. We had to go through two
 phases in order to clean everything properly. The first phase is where columns
 are renamed and restructured in order to merge them together. Columns have been
-manually merged by inspecting them one by one and merge the ones contain roughly
-the same name or content in terms of what they represent. Columns that were not
-of use were immediately excluded during this process.
+manually merged by inspecting them one by one and merging the ones containing
+roughly the same name or content in terms of what they represent. Columns that
+were not of use were immediately excluded during this process.
 
 The second phase involves normalising the data. In general, this has been done
 by thoroughly inspecting the unique values for each column and combine values
@@ -37,8 +37,7 @@ single dataset containing 19 columns and 535,759 rows.
 In terms of variable type and measurement scale, the variables in the final
 dataset can be classified under several combinations:
 
-- Continuous / Ordinal variables: `Salary`
-- Continuous / Ratio variables: `YearsCode`, `YearsCodePro`
+- Continuous / Ratio variables: `YearsCode`, `YearsCodePro`, `Salary`
 - Discrete / Ordinal variables: `JobSat`
 - Discrete / Nominal variables: `Education`, `OrgSize`, `LastNewJob`,
   `Employment`, `RespondentType`, `JobSeek`, `Gender`, `Student`, `Country`,
@@ -64,7 +63,6 @@ multiplied by 100.
 **Example:** Let's say in the Netherlands the average annual salary for men is
 &euro;80,000 and for women &euro;60,000. Then the salary gap will be 25% using
 the aforementioned calculation. If women are the ones making &euro;80,000 per
-year and men make &euro;60,000 per year, then the salary gap will be -33,3%. We
-call the percentage outcome a *male-favoured gap* if the percentage is above
-zero.  When the outcome is below zero, it is considered a *female-favoured gap*.
-Both men and women earn equal salary when the outcome is exactly zero.
+year and men make &euro;60,000 per year, then the salary gap will be -33%. We
+call the percentage outcome a *male-favoured gap* if the percentage is positive.
+When the outcome is negative, it is considered a *female-favoured gap*.
