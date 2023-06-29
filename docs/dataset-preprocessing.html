@@ -353,13 +353,13 @@ of gender pay gaps, as the dataset contains sufficient variables that can be
 used for two perspectives.</p>
 <section id="cleaning">
 <h2>Cleaning<a class="headerlink" href="#cleaning" title="Permalink to this heading">#</a></h2>
-<p>Each Stack Overflow dataset contained at least some changes compared to other
+<p>Each Stack Overflow dataset contains at least some changes compared to other
 years, such as column renaming or structural changes. We had to go through two
 phases in order to clean everything properly. The first phase is where columns
 are renamed and restructured in order to merge them together. Columns have been
-manually merged by inspecting them one by one and merge the ones contain roughly
-the same name or content in terms of what they represent. Columns that were not
-of use were immediately excluded during this process.</p>
+manually merged by inspecting them one by one and merging the ones containing
+roughly the same name or content in terms of what they represent. Columns that
+were not of use were immediately excluded during this process.</p>
 <p>The second phase involves normalising the data. In general, this has been done
 by thoroughly inspecting the unique values for each column and combine values
 that represent similar meaning.</p>
@@ -375,8 +375,7 @@ single dataset containing 19 columns and 535,759 rows.</p>
 <p>In terms of variable type and measurement scale, the variables in the final
 dataset can be classified under several combinations:</p>
 <ul class="simple">
-<li><p>Continuous / Ordinal variables: <code class="docutils literal notranslate"><span class="pre">Salary</span></code></p></li>
-<li><p>Continuous / Ratio variables: <code class="docutils literal notranslate"><span class="pre">YearsCode</span></code>, <code class="docutils literal notranslate"><span class="pre">YearsCodePro</span></code></p></li>
+<li><p>Continuous / Ratio variables: <code class="docutils literal notranslate"><span class="pre">YearsCode</span></code>, <code class="docutils literal notranslate"><span class="pre">YearsCodePro</span></code>, <code class="docutils literal notranslate"><span class="pre">Salary</span></code></p></li>
 <li><p>Discrete / Ordinal variables: <code class="docutils literal notranslate"><span class="pre">JobSat</span></code></p></li>
 <li><p>Discrete / Nominal variables: <code class="docutils literal notranslate"><span class="pre">Education</span></code>, <code class="docutils literal notranslate"><span class="pre">OrgSize</span></code>, <code class="docutils literal notranslate"><span class="pre">LastNewJob</span></code>,
 <code class="docutils literal notranslate"><span class="pre">Employment</span></code>, <code class="docutils literal notranslate"><span class="pre">RespondentType</span></code>, <code class="docutils literal notranslate"><span class="pre">JobSeek</span></code>, <code class="docutils literal notranslate"><span class="pre">Gender</span></code>, <code class="docutils literal notranslate"><span class="pre">Student</span></code>, <code class="docutils literal notranslate"><span class="pre">Country</span></code>,
@@ -400,10 +399,9 @@ multiplied by 100.</p>
 <p><strong>Example:</strong> Let’s say in the Netherlands the average annual salary for men is
 €80,000 and for women €60,000. Then the salary gap will be 25% using
 the aforementioned calculation. If women are the ones making €80,000 per
-year and men make €60,000 per year, then the salary gap will be -33,3%. We
-call the percentage outcome a <em>male-favoured gap</em> if the percentage is above
-zero.  When the outcome is below zero, it is considered a <em>female-favoured gap</em>.
-Both men and women earn equal salary when the outcome is exactly zero.</p>
+year and men make €60,000 per year, then the salary gap will be -33%. We
+call the percentage outcome a <em>male-favoured gap</em> if the percentage is positive.
+When the outcome is negative, it is considered a <em>female-favoured gap</em>.</p>
 </section>
 </section>
 
