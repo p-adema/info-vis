@@ -20,12 +20,16 @@ nav.bd-links {
 }
 
 a,
+a:hover,
+a:focus,
 .prev-next-area a p.prev-next-title,
 .toc-entry a.nav-link:hover,
 .toc-entry a.nav-link.active,
 nav.bd-links .active:hover > a,
+nav.bd-links .active:focus > a,
 nav.bd-links .active > a,
-nav.bd-links li > a:hover {
+nav.bd-links li > a:hover
+nav.bd-links li > a:focus {
   color: #fcab36;
 }
 
