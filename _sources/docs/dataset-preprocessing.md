@@ -2,7 +2,7 @@
 
 At first, we decided that each team member has to find at least one dataset of
 interest with sufficient data from which at least two perspectives can be
-induced. During the first team call, every dataset has been discussed along with
+induced. During the first team call, every dataset was discussed along with
 possible correlations. In the end, we chose the 2014-2022 datasets from the
 [Stack Overflow Annual Developer Survey](https://insights.stackoverflow.com/survey),
 as these datasets have correlations that could be of use for a potential topic.

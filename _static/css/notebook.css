@@ -28,7 +28,7 @@ a:focus,
 nav.bd-links .active:hover > a,
 nav.bd-links .active:focus > a,
 nav.bd-links .active > a,
-nav.bd-links li > a:hover
+nav.bd-links li > a:hover,
 nav.bd-links li > a:focus {
   color: #fcab36;
 }
